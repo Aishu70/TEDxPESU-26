@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, MapPin, Users, ArrowUpRight, Clock, CheckCircle2, Download, Sparkles, Navigation, Info } from 'lucide-react';
-import { EVENT_DETAILS, EVENT_SCHEDULE } from '../data/tedxData';
+import { Calendar, MapPin, Users, ArrowUpRight, Download, Navigation, Info } from 'lucide-react';
+import { EVENT_DETAILS } from '../data/tedxData';
 
 export default function Event2026Page() {
-  const [activeTab, setActiveTab] = useState('overview');
 
   // Generate Google Calendar Link
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
@@ -39,33 +38,6 @@ END:VCALENDAR`;
     link.click();
     document.body.removeChild(link);
   };
-
-  const tracks = [
-    {
-      num: "01",
-      title: "Synthetic & Soul",
-      theme: "Neuro-Symbolics & Human Intuition",
-      desc: "Investigating the friction between mathematical machine intelligence and raw human consciousness. How do we keep human agency intact as algorithms learn to create?"
-    },
-    {
-      num: "02",
-      title: "Tradition & Trajectory",
-      theme: "Grassroots Wisdom & Scalable Deep Tech",
-      desc: "Ancient ecological knowledge meets precision robotics and regenerative bio-composites. Proving heritage and high-tech are mutually accelerating forces."
-    },
-    {
-      num: "03",
-      title: "Stillness & Speed",
-      theme: "Radical Presence in Hyper-Connected Chaos",
-      desc: "Theatre disciplines of breath and physical silence contrasted with modern communication overload. Rediscovering conviction, mindfulness, and authentic voice."
-    },
-    {
-      num: "04",
-      title: "Harmony & Discord",
-      theme: "Cultural Dissonance as Fuel for Art",
-      desc: "From Carnatic ragas layered over sub-bass beatboxing to cinematic folklore rendered in synthetic virtual production. Finding unity inside conflicting truths."
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-20 overflow-hidden relative">
@@ -109,6 +81,7 @@ END:VCALENDAR`;
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
         
+
         {/* ========================================================
             HERO CARD & HEADER (Directly Matches Middle Left Panel)
         ======================================================== */}
@@ -222,9 +195,26 @@ END:VCALENDAR`;
         </div>
 
         {/* ========================================================
+            ABOUT TEDx — TEXT FROM SCREENSHOT
+        ======================================================== */}
+        <div className="space-y-6 bg-[#0d0d14] p-8 sm:p-12 rounded-3xl border border-white/5 relative overflow-hidden">
+          <div className="max-w-4xl space-y-5">
+            <span className="text-xs font-bold uppercase tracking-widest text-tedx-red">
+              About TEDx
+            </span>
+            <p className="text-sm sm:text-base text-tedx-muted leading-relaxed">
+              TEDx, a grassroots initiative, embodies the core principles of TED — technology, entertainment, and design, which are the driving forces shaping our world today. These highly curated talks feature expert speakers who passionately share their innovative ideas with the audience.
+            </p>
+            <p className="text-sm sm:text-base text-tedx-muted leading-relaxed">
+              TEDx brings the spirit of TED to communities worldwide, fostering the discovery and dissemination of "ideas worth spreading." Organized by dedicated individuals, these local TEDx events showcase the latest research and insights from their respective areas, sparking meaningful conversations within their communities. These events feature live speakers as well as recorded TED Talks, all organized independently under a free license granted by TED.
+            </p>
+          </div>
+        </div>
+
+        {/* ========================================================
             THEME PHILOSOPHY: CONTRAST IN CONVERGENCE
         ======================================================== */}
-        <div className="space-y-8 bg-[#0d0d14] p-8 sm:p-12 rounded-3xl border border-white/5 relative overflow-hidden">
+        <div className="space-y-6 bg-[#0d0d14] p-8 sm:p-12 rounded-3xl border border-white/5 relative overflow-hidden">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-bold uppercase tracking-widest text-tedx-red">
               Curatorial Statement
@@ -239,76 +229,6 @@ END:VCALENDAR`;
               At TEDxPESU 2026, we explore the friction at the boundary. When contrasting forces collide, they do not annihilate each other—they ignite unexpected synthesis.
             </p>
           </div>
-
-          {/* 4 Pillars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
-            {tracks.map((track) => (
-              <div
-                key={track.num}
-                className="p-6 rounded-2xl bg-[#12121a] border border-[#232330] hover:border-tedx-red/50 transition-all duration-300 space-y-3 group"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-black font-condensed text-tedx-red">
-                    {track.num}
-                  </span>
-                  <Sparkles className="w-4 h-4 text-tedx-muted group-hover:text-tedx-red transition-colors" />
-                </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-tedx-red transition-colors">
-                  {track.title}
-                </h3>
-                <p className="text-xs font-semibold text-tedx-red/90 uppercase tracking-wider">
-                  {track.theme}
-                </p>
-                <p className="text-xs text-tedx-muted leading-relaxed">
-                  {track.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ========================================================
-            FULL DAY SCHEDULE / AGENDA
-        ======================================================== */}
-        <div className="space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#20202d] pb-4">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-tedx-muted">
-                Feb 14, 2026 Program
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black font-condensed tracking-tight uppercase">
-                EVENT SCHEDULE
-              </h2>
-            </div>
-            <span className="text-xs text-tedx-muted">
-              PES University Main Auditorium • All times IST
-            </span>
-          </div>
-
-          <div className="space-y-3">
-            {EVENT_SCHEDULE.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-5 sm:p-6 rounded-2xl bg-[#0e0e15] border border-[#1e1e28] hover:border-tedx-red/40 hover:bg-[#12121c] transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 group"
-              >
-                <div className="flex items-center space-x-4 md:w-1/3 shrink-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-tedx-red shadow-glow-sm shrink-0" />
-                  <span className="font-mono text-sm text-tedx-red font-semibold">
-                    {item.time}
-                  </span>
-                </div>
-
-                <div className="md:w-2/3 space-y-1">
-                  <h4 className="text-base font-bold text-white group-hover:text-tedx-red transition-colors">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs text-tedx-muted leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* ========================================================
@@ -320,7 +240,7 @@ END:VCALENDAR`;
             <div className="space-y-2">
               <span className="text-xs font-bold uppercase tracking-widest text-tedx-red flex items-center space-x-1.5">
                 <Navigation className="w-3.5 h-3.5" />
-                <span>Venue & Accessibility</span>
+                <span>Venue &amp; Accessibility</span>
               </span>
               <h2 className="text-3xl sm:text-4xl font-black font-condensed tracking-tight uppercase">
                 PES UNIVERSITY, BENGALURU
