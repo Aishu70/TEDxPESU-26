@@ -1,4 +1,3 @@
-'''
 # TEDxPESU-26
 Official TEDxPESU 2026 website – Contrast in Convergence | A modern, responsive platform for event details, speakers, past events, and team highlights.
 
@@ -55,4 +54,3 @@ Once the server starts, the terminal will output a local development URL (typica
 * **UI Library:** React
 * **Styling:** Tailwind CSS
 
-'''
