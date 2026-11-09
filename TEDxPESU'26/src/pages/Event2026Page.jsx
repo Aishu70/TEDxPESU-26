@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, ArrowUpRight, Download, Navigation, Info } from 'lucide-react';
-import { EVENT_DETAILS } from '../data/tedxData';
+import { EVENT_DETAILS, REGISTRATION_FORM_URL } from '../data/tedxData';
 
 export default function Event2026Page() {
 
@@ -101,13 +101,15 @@ END:VCALENDAR`;
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-4">
-              <Link
-                to="/register"
+              <a
+                href={REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full bg-tedx-red hover:bg-tedx-red-hover text-white text-xs font-bold uppercase tracking-wider shadow-glow-sm transition-all flex items-center space-x-1.5"
               >
                 <span>Register Now</span>
                 <ArrowUpRight className="w-4 h-4" />
-              </Link>
+              </a>
               
               <div className="relative group/cal">
                 <button
@@ -306,13 +308,15 @@ END:VCALENDAR`;
             Book your delegate pass now and be part of the most anticipated ideas festival of 2026.
           </p>
           <div className="pt-2">
-            <Link
-              to="/register"
+            <a
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3.5 rounded-full bg-tedx-red hover:bg-tedx-red-hover text-white text-xs font-bold uppercase tracking-wider shadow-glow-sm inline-flex items-center space-x-2"
             >
               <span>Register for Passes</span>
               <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
 

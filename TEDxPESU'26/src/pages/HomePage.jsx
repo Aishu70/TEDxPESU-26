@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, ArrowUpRight, Play, Sparkles, ChevronRight, CheckCircle2, Ticket } from 'lucide-react';
-import { EVENT_DETAILS, SPEAKERS, PAST_EDITIONS } from '../data/tedxData';
+import { EVENT_DETAILS, SPEAKERS, PAST_EDITIONS, REGISTRATION_FORM_URL } from '../data/tedxData';
 import SpeakerCard from '../components/SpeakerCard';
 import SpeakerModal from '../components/SpeakerModal';
 import CountdownTimer from '../components/CountdownTimer';
@@ -102,13 +102,15 @@ export default function HomePage() {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                to="/register"
+              <a
+                href={REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full bg-tedx-red hover:bg-tedx-red-hover text-white font-bold text-sm tracking-wide shadow-glow-sm hover:shadow-glow-md transition-all flex items-center space-x-2 group"
               >
                 <span>Register for 2026</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
+              </a>
 
               <Link
                 to="/event-2026"
@@ -231,13 +233,15 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-4">
-                <Link
-                  to="/register"
+                <a
+                  href={REGISTRATION_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-2.5 rounded-full bg-tedx-red hover:bg-tedx-red-hover text-white text-xs font-bold uppercase tracking-wider shadow-glow-sm transition-all flex items-center space-x-1.5"
                 >
                   <span>Register Now</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
+                </a>
 
                 <Link
                   to="/event-2026"
@@ -291,10 +295,10 @@ export default function HomePage() {
 
                 <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs text-zinc-300">
                   <span>Seats Filling Quickly</span>
-                  <Link to="/register" className="text-white hover:text-tedx-red font-bold flex items-center space-x-1 transition-colors">
+                  <a href={REGISTRATION_FORM_URL} target="_blank" rel="noopener noreferrer" className="text-white hover:text-tedx-red font-bold flex items-center space-x-1 transition-colors">
                     <span>Reserve Seat</span>
                     <ArrowUpRight className="w-3 h-3 text-tedx-red" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -530,13 +534,15 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <Link
-              to="/register"
+            <a
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-3.5 rounded-full bg-tedx-red hover:bg-tedx-red-hover text-white font-bold text-sm tracking-wide shadow-glow-md flex items-center space-x-2 transition-all"
             >
               <Ticket className="w-4 h-4" />
               <span>Register for Passes</span>
-            </Link>
+            </a>
 
             <Link
               to="/speakers"

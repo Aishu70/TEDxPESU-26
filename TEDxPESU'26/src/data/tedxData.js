@@ -21,6 +21,7 @@ export const EVENT_DETAILS = {
 };
 
 export const CDN_BASE = "https://ted-x-pesu-2025.vercel.app/";
+export const REGISTRATION_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScfkDa7KpyLI-zWghyw3FJ_JkN4ZUuqL-f60zT65CP20GWhEw/viewform";
 
 export const SPEAKERS = [
   {

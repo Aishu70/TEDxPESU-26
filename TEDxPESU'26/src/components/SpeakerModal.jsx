@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, ArrowUpRight, Award, Quote, Calendar, MapPin, Sparkles, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { REGISTRATION_FORM_URL } from '../data/tedxData';
 
 export default function SpeakerModal({ speaker, onClose }) {
   if (!speaker) return null;
@@ -163,13 +164,15 @@ export default function SpeakerModal({ speaker, onClose }) {
                 <ArrowUpRight className="w-3 h-3" />
               </Link>
 
-              <Link
-                to="/register"
+              <a
+                href={REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-2.5 rounded-full bg-tedx-red hover:bg-tedx-red-hover text-white font-bold text-xs shadow-glow-sm flex items-center space-x-1.5 transition-all"
               >
                 <span>Register to Attend Talk</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </div>
 
           </div>

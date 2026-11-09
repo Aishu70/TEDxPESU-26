@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Mail, MapPin, Calendar, Heart, ShieldCheck } from 'lucide-react';
-import { EVENT_DETAILS } from '../data/tedxData';
+import { EVENT_DETAILS, REGISTRATION_FORM_URL } from '../data/tedxData';
 
 // Custom inline Instagram SVG
 function InstagramIcon({ className = "w-4 h-4" }) {
@@ -74,7 +74,7 @@ export default function Footer() {
                 <Link to="/team" className="hover:text-white transition-colors">Organizing Team</Link>
               </li>
               <li>
-                <Link to="/register" className="hover:text-tedx-red transition-colors font-medium">Ticket Registration</Link>
+                <a href={REGISTRATION_FORM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-tedx-red transition-colors font-medium">Ticket Registration</a>
               </li>
             </ul>
           </div>

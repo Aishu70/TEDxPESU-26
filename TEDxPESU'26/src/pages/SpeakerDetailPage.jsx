@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Award, Calendar, MapPin, Sparkles, Quote, Share2, Ticket } from 'lucide-react';
-import { SPEAKERS } from '../data/tedxData';
+import { SPEAKERS, REGISTRATION_FORM_URL } from '../data/tedxData';
 
 export default function SpeakerDetailPage() {
   const { id } = useParams();
@@ -156,13 +156,15 @@ export default function SpeakerDetailPage() {
                 </p>
               </div>
 
-              <Link
-                to="/register"
+              <a
+                href={REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-2.5 rounded-full bg-tedx-red hover:bg-tedx-red-hover text-white font-bold text-xs shadow-glow-sm flex items-center space-x-1.5 transition-all shrink-0"
               >
                 <Ticket className="w-3.5 h-3.5" />
                 <span>Reserve Seat</span>
-              </Link>
+              </a>
             </div>
 
           </div>

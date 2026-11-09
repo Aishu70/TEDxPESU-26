@@ -9,7 +9,7 @@ import SpeakersPage from './pages/SpeakersPage';
 import SpeakerDetailPage from './pages/SpeakerDetailPage';
 import PastEventsPage from './pages/PastEventsPage';
 import TeamPage from './pages/TeamPage';
-import RegisterPage from './pages/RegisterPage';
+import { REGISTRATION_FORM_URL } from './data/tedxData';
 
 // Scroll to top helper
 function ScrollToTop() {
@@ -18,6 +18,14 @@ function ScrollToTop() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  return null;
+}
+
+function RegisterRedirect() {
+  useEffect(() => {
+    window.location.replace(REGISTRATION_FORM_URL);
+  }, []);
 
   return null;
 }
@@ -37,7 +45,7 @@ export default function App() {
             <Route path="/speakers/:id" element={<SpeakerDetailPage />} />
             <Route path="/past-events" element={<PastEventsPage />} />
             <Route path="/team" element={<TeamPage />} />
-            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/register" element={<RegisterRedirect />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
