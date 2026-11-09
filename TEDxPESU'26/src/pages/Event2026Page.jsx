@@ -1,43 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, MapPin, Users, ArrowUpRight, Download, Navigation, Info } from 'lucide-react';
-import { EVENT_DETAILS, REGISTRATION_FORM_URL } from '../data/tedxData';
+import { Calendar, MapPin, Users, ArrowUpRight, Navigation, Info } from 'lucide-react';
+import { REGISTRATION_FORM_URL } from '../data/tedxData';
 
 export default function Event2026Page() {
-
-  // Generate Google Calendar Link
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-    'TEDxPESU 2026: Contrast in Convergence'
-  )}&dates=20260214T033000Z/20260214T123000Z&details=${encodeURIComponent(
-    'TEDxPESU 2026 at PES University Bengaluru. Live Talks, Performances, Ideas, and Community.'
-  )}&location=${encodeURIComponent(EVENT_DETAILS.fullAddress)}`;
-
-  // Download .ics file
-  const handleDownloadICS = () => {
-    const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//TEDxPESU//Event Calendar//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-BEGIN:VEVENT
-SUMMARY:TEDxPESU 2026: Contrast in Convergence
-DESCRIPTION:Where opposing perspectives meet, collide, and create new possibilities. Live at PES University, Bengaluru.
-LOCATION:${EVENT_DETAILS.fullAddress}
-DTSTART:20260214T093000
-DTEND:20260214T180000
-STATUS:CONFIRMED
-END:VEVENT
-END:VCALENDAR`;
-
-    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'TEDxPESU_2026.ics');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-20 overflow-hidden relative">
@@ -111,35 +77,6 @@ END:VCALENDAR`;
                 <ArrowUpRight className="w-4 h-4" />
               </a>
               
-              <div className="relative group/cal">
-                <button
-                  onClick={handleDownloadICS}
-                  className="px-6 py-3.5 rounded-full bg-[#13131a] hover:bg-[#1c1c24] text-white border border-[#272733] text-xs font-medium transition-all flex items-center space-x-2"
-                >
-                  <Calendar className="w-4 h-4 text-tedx-red" />
-                  <span>Add to Calendar</span>
-                  <Download className="w-3.5 h-3.5 text-tedx-muted" />
-                </button>
-                
-                {/* Sub-menu to choose Google Calendar */}
-                <div className="absolute left-0 mt-2 w-48 bg-[#12121a] border border-[#2b2b3a] rounded-xl p-1.5 shadow-xl opacity-0 group-hover/cal:opacity-100 transition-opacity pointer-events-none group-hover/cal:pointer-events-auto z-30">
-                  <button
-                    onClick={handleDownloadICS}
-                    className="w-full text-left px-3 py-2 rounded-lg text-xs hover:bg-white/5 text-white/90 flex items-center justify-between"
-                  >
-                    <span>Download .ICS file</span>
-                  </button>
-                  <a
-                    href={googleCalendarUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full text-left px-3 py-2 rounded-lg text-xs hover:bg-white/5 text-white/90 flex items-center justify-between"
-                  >
-                    <span>Google Calendar</span>
-                    <ArrowUpRight className="w-3 h-3 text-tedx-red" />
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
 

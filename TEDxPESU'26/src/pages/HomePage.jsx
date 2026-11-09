@@ -243,13 +243,6 @@ export default function HomePage() {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
 
-                <Link
-                  to="/event-2026"
-                  className="px-5 py-2.5 rounded-full bg-[#14141c]/90 hover:bg-[#1f1f2a] text-white border border-white/20 text-xs font-medium transition-all flex items-center space-x-2"
-                >
-                  <Calendar className="w-3.5 h-3.5 text-tedx-red" />
-                  <span>Add to Calendar</span>
-                </Link>
               </div>
             </div>
 
