@@ -55,4 +55,4 @@ Once the server starts, the terminal will output a local development URL (typica
 * **UI Library:** React
 * **Styling:** Tailwind CSS
 
-```
+'''
