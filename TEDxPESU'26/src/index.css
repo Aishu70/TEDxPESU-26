@@ -66,3 +66,23 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #eb0028;
 }
+
+/* Hardware acceleration & image crispness enhancements */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.card-red-gradient, .glass-panel, .glass-panel-glow {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+}
