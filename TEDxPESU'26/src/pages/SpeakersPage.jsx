@@ -3,6 +3,7 @@ import { Music, ArrowUpRight, Award, Mic2, Users } from 'lucide-react';
 import { SPEAKERS, PERFORMERS } from '../data/tedxData';
 import SpeakerCard from '../components/SpeakerCard';
 import SpeakerModal from '../components/SpeakerModal';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function SpeakersPage() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
@@ -118,13 +119,12 @@ export default function SpeakersPage() {
                 className="rounded-3xl bg-[#0f0f16] border border-[#232332] overflow-hidden hover:border-tedx-red/50 hover:shadow-glow-sm transition-all flex flex-col group"
               >
                 <div className="relative aspect-video w-full overflow-hidden bg-black">
-                  <img
+                  <OptimizedImage
                     src={performer.image}
                     alt={performer.name}
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    fallbackSrc="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80"
                     className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                    onError={(e) => {
-                      e.currentTarget.src = `https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80`;
-                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3">

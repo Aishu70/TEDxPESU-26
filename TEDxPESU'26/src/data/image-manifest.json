@@ -1,0 +1,370 @@
+{
+  "/assets/eye-full.jpg": {
+    "width": 580,
+    "height": 238,
+    "avif": [
+      {
+        "src": "/assets/optimized/eye-full-240.avif",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/eye-full-320.avif",
+        "w": 320
+      },
+      {
+        "src": "/assets/optimized/eye-full-400.avif",
+        "w": 400
+      },
+      {
+        "src": "/assets/optimized/eye-full-480.avif",
+        "w": 480
+      },
+      {
+        "src": "/assets/optimized/eye-full-580.avif",
+        "w": 580
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/eye-full-240.webp",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/eye-full-320.webp",
+        "w": 320
+      },
+      {
+        "src": "/assets/optimized/eye-full-400.webp",
+        "w": 400
+      },
+      {
+        "src": "/assets/optimized/eye-full-480.webp",
+        "w": 480
+      },
+      {
+        "src": "/assets/optimized/eye-full-580.webp",
+        "w": 580
+      }
+    ]
+  },
+  "/assets/hero-hand-enhanced.jpg": {
+    "width": 1008,
+    "height": 592,
+    "avif": [
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-240.avif",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-320.avif",
+        "w": 320
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-400.avif",
+        "w": 400
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-480.avif",
+        "w": 480
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-640.avif",
+        "w": 640
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-800.avif",
+        "w": 800
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-1008.avif",
+        "w": 1008
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-240.webp",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-320.webp",
+        "w": 320
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-400.webp",
+        "w": 400
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-480.webp",
+        "w": 480
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-640.webp",
+        "w": 640
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/assets/optimized/hero-hand-enhanced-1008.webp",
+        "w": 1008
+      }
+    ]
+  },
+  "/assets/past-photo-1.jpg": {
+    "width": 228,
+    "height": 106,
+    "avif": [
+      {
+        "src": "/assets/optimized/past-photo-1-228.avif",
+        "w": 228
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/past-photo-1-228.webp",
+        "w": 228
+      }
+    ]
+  },
+  "/assets/past-photo-2.jpg": {
+    "width": 240,
+    "height": 106,
+    "avif": [
+      {
+        "src": "/assets/optimized/past-photo-2-240.avif",
+        "w": 240
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/past-photo-2-240.webp",
+        "w": 240
+      }
+    ]
+  },
+  "/assets/past-photo-3.jpg": {
+    "width": 228,
+    "height": 106,
+    "avif": [
+      {
+        "src": "/assets/optimized/past-photo-3-228.avif",
+        "w": 228
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/past-photo-3-228.webp",
+        "w": 228
+      }
+    ]
+  },
+  "/assets/speaker-ananya-avatar.jpg": {
+    "width": 303,
+    "height": 234,
+    "avif": [
+      {
+        "src": "/assets/optimized/speaker-ananya-avatar-240.avif",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-ananya-avatar-303.avif",
+        "w": 303
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/speaker-ananya-avatar-240.webp",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-ananya-avatar-303.webp",
+        "w": 303
+      }
+    ]
+  },
+  "/assets/speaker-ira-avatar.jpg": {
+    "width": 303,
+    "height": 234,
+    "avif": [
+      {
+        "src": "/assets/optimized/speaker-ira-avatar-240.avif",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-ira-avatar-303.avif",
+        "w": 303
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/speaker-ira-avatar-240.webp",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-ira-avatar-303.webp",
+        "w": 303
+      }
+    ]
+  },
+  "/assets/speaker-karan-avatar.jpg": {
+    "width": 303,
+    "height": 234,
+    "avif": [
+      {
+        "src": "/assets/optimized/speaker-karan-avatar-240.avif",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-karan-avatar-303.avif",
+        "w": 303
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/speaker-karan-avatar-240.webp",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-karan-avatar-303.webp",
+        "w": 303
+      }
+    ]
+  },
+  "/assets/speaker-rishi-avatar.jpg": {
+    "width": 303,
+    "height": 234,
+    "avif": [
+      {
+        "src": "/assets/optimized/speaker-rishi-avatar-240.avif",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-rishi-avatar-303.avif",
+        "w": 303
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/speaker-rishi-avatar-240.webp",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/speaker-rishi-avatar-303.webp",
+        "w": 303
+      }
+    ]
+  },
+  "/assets/stage-video-ref.jpg": {
+    "width": 400,
+    "height": 230,
+    "avif": [
+      {
+        "src": "/assets/optimized/stage-video-ref-240.avif",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/stage-video-ref-320.avif",
+        "w": 320
+      },
+      {
+        "src": "/assets/optimized/stage-video-ref-400.avif",
+        "w": 400
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/stage-video-ref-240.webp",
+        "w": 240
+      },
+      {
+        "src": "/assets/optimized/stage-video-ref-320.webp",
+        "w": 320
+      },
+      {
+        "src": "/assets/optimized/stage-video-ref-400.webp",
+        "w": 400
+      }
+    ]
+  },
+  "/assets/team-aarav-avatar.jpg": {
+    "width": 252,
+    "height": 192,
+    "avif": [
+      {
+        "src": "/assets/optimized/team-aarav-avatar-252.avif",
+        "w": 252
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/team-aarav-avatar-252.webp",
+        "w": 252
+      }
+    ]
+  },
+  "/assets/team-devansh-avatar.jpg": {
+    "width": 252,
+    "height": 192,
+    "avif": [
+      {
+        "src": "/assets/optimized/team-devansh-avatar-252.avif",
+        "w": 252
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/team-devansh-avatar-252.webp",
+        "w": 252
+      }
+    ]
+  },
+  "/assets/team-meera-avatar.jpg": {
+    "width": 252,
+    "height": 192,
+    "avif": [
+      {
+        "src": "/assets/optimized/team-meera-avatar-252.avif",
+        "w": 252
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/team-meera-avatar-252.webp",
+        "w": 252
+      }
+    ]
+  },
+  "/assets/team-nikita-avatar.jpg": {
+    "width": 252,
+    "height": 192,
+    "avif": [
+      {
+        "src": "/assets/optimized/team-nikita-avatar-252.avif",
+        "w": 252
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/team-nikita-avatar-252.webp",
+        "w": 252
+      }
+    ]
+  },
+  "/assets/team-rohan-avatar.jpg": {
+    "width": 252,
+    "height": 192,
+    "avif": [
+      {
+        "src": "/assets/optimized/team-rohan-avatar-252.avif",
+        "w": 252
+      }
+    ],
+    "webp": [
+      {
+        "src": "/assets/optimized/team-rohan-avatar-252.webp",
+        "w": 252
+      }
+    ]
+  }
+}

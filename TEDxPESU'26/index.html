@@ -9,7 +9,25 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Remote image hosts used across speakers / team / past-events pages -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://ted-x-pesu-2025.vercel.app" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://ted-x-pesu-2025.vercel.app">
+    <link rel="dns-prefetch" href="https://ui-avatars.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+
+    <!-- LCP hero image: load the AVIF variant set before React boots -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      fetchpriority="high"
+      imagesrcset="/assets/optimized/hero-hand-enhanced-240.avif 240w, /assets/optimized/hero-hand-enhanced-320.avif 320w, /assets/optimized/hero-hand-enhanced-400.avif 400w, /assets/optimized/hero-hand-enhanced-480.avif 480w, /assets/optimized/hero-hand-enhanced-640.avif 640w, /assets/optimized/hero-hand-enhanced-800.avif 800w, /assets/optimized/hero-hand-enhanced-1008.avif 1008w"
+      imagesizes="(min-width: 1024px) 42vw, (min-width: 640px) 70vw, 92vw"
+    >
   </head>
   <body class="bg-black text-[#f4f4f6] selection:bg-[#eb0028] selection:text-white font-sans antialiased overflow-x-hidden min-h-screen">
     <div id="root"></div>

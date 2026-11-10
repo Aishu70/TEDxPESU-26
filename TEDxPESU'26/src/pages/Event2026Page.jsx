@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, ArrowUpRight, Navigation, Info } from 'lucide-react';
 import { REGISTRATION_FORM_URL } from '../data/tedxData';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function Event2026Page() {
 
@@ -222,9 +223,10 @@ export default function Event2026Page() {
           </div>
 
           <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-glass">
-            <img
+            <OptimizedImage
               src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80"
               alt="PES University Campus"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="w-full h-full object-cover contrast-125 brightness-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">

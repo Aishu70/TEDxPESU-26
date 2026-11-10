@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 export default function SpeakerCard({ speaker, onClick }) {
   return (
@@ -37,13 +38,12 @@ export default function SpeakerCard({ speaker, onClick }) {
         <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-tedx-red/40 blur-2xl group-hover:scale-125 transition-transform duration-500 pointer-events-none" />
 
         {/* Speaker Image — grayscale by default, full color on hover */}
-        <img
+        <OptimizedImage
           src={speaker.image}
           alt={speaker.name}
+          sizes="(min-width: 1024px) 24vw, (min-width: 768px) 32vw, (min-width: 640px) 48vw, 45vw"
+          fallbackSrc={`https://ui-avatars.com/api/?name=${encodeURIComponent(speaker.name)}&background=0a0a10&color=eb0028&size=512`}
           className="relative z-10 h-full w-full object-cover object-top grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500"
-          onError={(e) => {
-            e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(speaker.name)}&background=0a0a10&color=eb0028&size=512`;
-          }}
         />
 
         {/* Edition badge */}

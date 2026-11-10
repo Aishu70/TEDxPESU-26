@@ -5,17 +5,11 @@ import { EVENT_DETAILS, SPEAKERS, PAST_EDITIONS, REGISTRATION_FORM_URL } from '.
 import SpeakerCard from '../components/SpeakerCard';
 import SpeakerModal from '../components/SpeakerModal';
 import CountdownTimer from '../components/CountdownTimer';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function HomePage() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 2;
-    const y = (e.clientY / window.innerHeight - 0.5) * 2;
-    setMousePos({ x, y });
-  };
 
   // Top 4 featured 2026 speakers matching the template
   const featuredSpeakers = SPEAKERS.slice(0, 4);
@@ -156,9 +150,11 @@ export default function HomePage() {
               <div className="absolute -bottom-10 right-20 w-80 h-80 bg-tedx-red/25 rounded-full blur-[90px] pointer-events-none" />
 
               {/* The Hero Hand Visual from Reference Image */}
-              <img
+              <OptimizedImage
                 src="/assets/hero-hand-enhanced.jpg"
                 alt="Contrast in Convergence Hand Visual"
+                priority
+                sizes="(min-width: 1024px) 42vw, (min-width: 640px) 70vw, 92vw"
                 className="w-full h-full object-cover object-center contrast-125 brightness-105 group-hover:scale-105 transition-transform duration-700"
                 style={{
                   maskImage: 'radial-gradient(ellipse 95% 90% at 65% 50%, black 55%, transparent 100%)',
@@ -341,9 +337,10 @@ export default function HomePage() {
         
         {/* Dramatic Red-lit Eye Motif in Top-Right Background from Reference */}
         <div className="absolute top-4 right-0 w-[380px] sm:w-[500px] h-[180px] sm:h-[220px] pointer-events-none z-0 overflow-hidden opacity-90">
-          <img
+          <OptimizedImage
             src="/assets/eye-full.jpg"
             alt=""
+            sizes="(min-width: 640px) 500px, 380px"
             className="w-full h-full object-cover object-center contrast-130 brightness-95"
             style={{
               maskImage: 'radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 95%)',
@@ -375,9 +372,10 @@ export default function HomePage() {
               
               {/* Main Featured Video / Showcase (Col 7) */}
               <div className="lg:col-span-7 relative group rounded-3xl overflow-hidden border border-white/10 bg-[#08080c] aspect-[16/10] shadow-2xl flex items-center justify-center">
-                <img
+                <OptimizedImage
                   src="/assets/stage-video-ref.jpg"
                   alt="TEDxPESU 2025 Stage"
+                  sizes="(min-width: 1024px) 58vw, 100vw"
                   className="w-full h-full object-cover contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -413,9 +411,10 @@ export default function HomePage() {
                 
                 {/* Photo 1: Audience */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 group bg-black">
-                  <img
+                  <OptimizedImage
                     src="/assets/past-photo-1.jpg"
                     alt="Audience"
+                    sizes="(min-width: 1024px) 22vw, 50vw"
                     className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
@@ -423,9 +422,10 @@ export default function HomePage() {
 
                 {/* Photo 2: Speaker with red X */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 group bg-black">
-                  <img
+                  <OptimizedImage
                     src="/assets/past-photo-2.jpg"
                     alt="Speaker"
+                    sizes="(min-width: 1024px) 22vw, 50vw"
                     className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
@@ -433,9 +433,10 @@ export default function HomePage() {
 
                 {/* Photo 3: Networking / Team */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 group bg-black">
-                  <img
+                  <OptimizedImage
                     src="/assets/past-photo-3.jpg"
                     alt="Networking"
+                    sizes="(min-width: 1024px) 22vw, 50vw"
                     className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
@@ -489,9 +490,10 @@ export default function HomePage() {
                   className="group rounded-2xl bg-[#08080c] border border-white/10 p-3 text-center transition-all duration-300 hover:border-tedx-red/60 hover:shadow-[0_0_25px_rgba(235,0,40,0.3)] hover:-translate-y-1"
                 >
                   <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-black mb-3">
-                    <img
+                    <OptimizedImage
                       src={member.image}
                       alt={member.name}
+                      sizes="(min-width: 768px) 18vw, (min-width: 640px) 30vw, 45vw"
                       className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-all duration-300"
                     />
                   </div>
