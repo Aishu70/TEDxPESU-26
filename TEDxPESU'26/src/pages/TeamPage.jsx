@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Users, Sparkles, Heart, Shield, ArrowUpRight } from 'lucide-react';
 import { TEAM_DOMAINS } from '../data/tedxData';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function TeamPage() {
   const [selectedDomain, setSelectedDomain] = useState('All');
@@ -89,13 +90,12 @@ export default function TeamPage() {
                     >
                       <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-black mb-3">
                         <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-tedx-red/40 blur-xl pointer-events-none" />
-                        <img
+                        <OptimizedImage
                           src={member.image}
                           alt={member.name}
+                          sizes="(min-width: 1024px) 18vw, (min-width: 768px) 22vw, (min-width: 640px) 30vw, 45vw"
+                          fallbackSrc={`https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=08080c&color=eb0028`}
                           className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300 relative z-10"
-                          onError={(e) => {
-                            e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=08080c&color=eb0028`;
-                          }}
                         />
                       </div>
                       <h4 className="text-sm font-bold text-white group-hover:text-tedx-red transition-colors tracking-tight">

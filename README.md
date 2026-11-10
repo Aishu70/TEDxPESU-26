@@ -54,3 +54,17 @@ Once the server starts, the terminal will output a local development URL (typica
 * **UI Library:** React
 * **Styling:** Tailwind CSS
 
+---
+
+## Image Optimization
+
+Local images in `public/assets` are served as responsive AVIF/WebP variants through `<OptimizedImage>` (`src/components/OptimizedImage.jsx`). The generated files live in `public/assets/optimized` and the mapping is stored in `src/data/image-manifest.json`.
+
+When you add or replace a local image that is referenced from `src/`, regenerate the variants (requires ImageMagick 7):
+
+```bash
+npm run optimize:images
+```
+
+Commit the regenerated `public/assets/optimized` files and manifest along with the image change.
+

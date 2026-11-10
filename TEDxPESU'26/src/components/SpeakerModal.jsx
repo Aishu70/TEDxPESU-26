@@ -2,6 +2,7 @@ import React from 'react';
 import { X, ArrowUpRight, Award, Quote, Calendar, MapPin, Sparkles, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { REGISTRATION_FORM_URL } from '../data/tedxData';
+import OptimizedImage from './OptimizedImage';
 
 export default function SpeakerModal({ speaker, onClose }) {
   if (!speaker) return null;
@@ -43,13 +44,13 @@ export default function SpeakerModal({ speaker, onClose }) {
           <div className="md:col-span-2 relative bg-[#07070b] p-6 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#20202d]">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-inner">
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              <img
+              <OptimizedImage
                 src={speaker.image}
                 alt={speaker.name}
+                priority
+                sizes="(min-width: 768px) 320px, 90vw"
+                fallbackSrc={`https://ui-avatars.com/api/?name=${encodeURIComponent(speaker.name)}&background=181822&color=eb0028&size=512`}
                 className="w-full h-full object-cover object-top"
-                onError={(e) => {
-                  e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(speaker.name)}&background=181822&color=eb0028&size=512`;
-                }}
               />
               <div className="absolute bottom-3 left-3 right-3 z-20">
                 <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tedx-red text-white shadow-glow-sm">

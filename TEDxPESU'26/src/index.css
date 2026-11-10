@@ -10,6 +10,32 @@
   }
 }
 
+/* <picture> must not create a layout box; the <img> stays the flex/grid child. */
+.optimized-image-picture {
+  display: contents;
+}
+
+/* Keep heavy image galleries cheap to paint while they are off-screen. */
+.gallery-item {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Custom glow and glassmorphism with high contrast */
 .glass-panel {
   background: rgba(10, 10, 14, 0.85);

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Award, Calendar, MapPin, Sparkles, Quote, Share2, Ticket } from 'lucide-react';
 import { SPEAKERS, REGISTRATION_FORM_URL } from '../data/tedxData';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function SpeakerDetailPage() {
   const { id } = useParams();
@@ -47,13 +48,13 @@ export default function SpeakerDetailPage() {
           <div className="lg:col-span-4 relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-inner bg-black">
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              <img
+              <OptimizedImage
                 src={speaker.image}
                 alt={speaker.name}
+                priority
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                fallbackSrc={`https://ui-avatars.com/api/?name=${encodeURIComponent(speaker.name)}&background=181822&color=eb0028&size=512`}
                 className="w-full h-full object-cover object-top"
-                onError={(e) => {
-                  e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(speaker.name)}&background=181822&color=eb0028&size=512`;
-                }}
               />
               <div className="absolute bottom-4 left-4 z-20">
                 <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-tedx-red text-white shadow-glow-sm">
@@ -183,13 +184,12 @@ export default function SpeakerDetailPage() {
                 to={`/speakers/${s.id}`}
                 className="group rounded-2xl bg-[#0f0f15] border border-[#20202c] p-4 hover:border-tedx-red/50 transition-all flex items-center space-x-4"
               >
-                <img
+                <OptimizedImage
                   src={s.image}
                   alt={s.name}
+                  sizes="56px"
+                  fallbackSrc={`https://ui-avatars.com/api/?name=${encodeURIComponent(s.name)}&background=181822&color=eb0028`}
                   className="w-14 h-14 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all shrink-0"
-                  onError={(e) => {
-                    e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(s.name)}&background=181822&color=eb0028`;
-                  }}
                 />
                 <div className="overflow-hidden">
                   <h4 className="text-sm font-bold text-white group-hover:text-tedx-red transition-colors truncate">

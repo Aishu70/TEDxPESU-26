@@ -12,7 +12,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -28,6 +28,19 @@ export default function Navbar() {
     { name: 'Past Events', path: '/past-events' },
     { name: 'Team', path: '/team' },
   ];
+
+  // Warm the lazy route chunk the moment a visitor shows intent.
+  const routeLoaders = {
+    '/event-2026': () => import('../pages/Event2026Page'),
+    '/speakers': () => import('../pages/SpeakersPage'),
+    '/past-events': () => import('../pages/PastEventsPage'),
+    '/team': () => import('../pages/TeamPage'),
+  };
+
+  const prefetchRoute = (path) => {
+    const loader = routeLoaders[path];
+    if (loader) loader().catch(() => {});
+  };
 
   const isActive = (path) => {
     if (path === '/') return location.pathname === '/';
@@ -63,6 +76,8 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
+                  onMouseEnter={() => prefetchRoute(link.path)}
+                  onFocus={() => prefetchRoute(link.path)}
                   className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                     active 
                       ? 'text-white' 
@@ -122,6 +137,8 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
+                onMouseEnter={() => prefetchRoute(link.path)}
+                onFocus={() => prefetchRoute(link.path)}
                 className={`block px-4 py-2.5 rounded-xl text-base font-medium ${
                   active 
                     ? 'bg-tedx-red/15 text-white border-l-4 border-tedx-red' 

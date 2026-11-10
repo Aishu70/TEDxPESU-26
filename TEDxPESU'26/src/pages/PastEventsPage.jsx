@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Play, Sparkles, X, ChevronRight, Calendar, Users, Eye, ArrowUpRight, Award, History } from 'lucide-react';
 import { PAST_EDITIONS, CDN_BASE } from '../data/tedxData';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function PastEventsPage() {
   const [selectedEdition, setSelectedEdition] = useState('2025');
@@ -41,9 +42,10 @@ export default function PastEventsPage() {
 
       {/* Dramatic Red-lit Eye Motif in Top-Right Background */}
       <div className="absolute top-4 right-0 w-[380px] sm:w-[500px] h-[180px] sm:h-[220px] pointer-events-none z-0 overflow-hidden opacity-90">
-        <img
+        <OptimizedImage
           src="/assets/eye-full.jpg"
           alt=""
+          sizes="(min-width: 640px) 500px, 380px"
           className="w-full h-full object-cover object-center contrast-130 brightness-95"
           style={{
             maskImage: 'radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 95%)',
@@ -93,9 +95,10 @@ export default function PastEventsPage() {
           
           {/* Main Video Banner Card */}
           <div className="lg:col-span-7 relative group rounded-3xl overflow-hidden border border-[#252535] bg-[#0c0c14] aspect-[16/10] shadow-glass flex items-center justify-center">
-            <img
+            <OptimizedImage
               src="/assets/stage-video-ref.jpg"
               alt="TEDxPESU 2025 Stage"
+              sizes="(min-width: 1024px) 58vw, 100vw"
               className="w-full h-full object-cover contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
@@ -190,15 +193,13 @@ export default function PastEventsPage() {
               <div
                 key={photo.id}
                 onClick={() => setActiveLightboxImage(photo)}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#101018] border border-white/10 cursor-pointer hover:border-tedx-red/60 transition-all hover:shadow-glow-sm"
+                className="gallery-item group relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#101018] border border-white/10 cursor-pointer hover:border-tedx-red/60 transition-all hover:shadow-glow-sm"
               >
-                <img
+                <OptimizedImage
                   src={photo.fallback}
                   alt={photo.title}
+                  sizes="(min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.src = photo.fallback;
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
                   <span className="text-[11px] text-white font-medium flex items-center space-x-1">
@@ -229,9 +230,11 @@ export default function PastEventsPage() {
             <X className="w-5 h-5" />
           </button>
           <div className="max-w-4xl max-h-[85vh] rounded-2xl overflow-hidden border border-white/20">
-            <img
+            <OptimizedImage
               src={activeLightboxImage.fallback}
               alt={activeLightboxImage.title}
+              priority
+              sizes="(min-width: 1024px) 56rem, 92vw"
               className="w-full h-full object-contain"
             />
           </div>
