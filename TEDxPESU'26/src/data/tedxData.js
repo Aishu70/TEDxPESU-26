@@ -272,11 +272,9 @@ export const TEAM_DOMAINS = [
     quote: "Guiding the vision, empowering the team.",
     leadRole: "CONVENORS & LEADS",
     mainMembers: [
-      { name: "Aarav Sharma", role: "Organizer & Curator", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" },
-      { name: "Meera Iyer", role: "Co-Organizer & Executive Lead", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" },
-      { name: "Diya", role: "Operations Lead", image: `${CDN_BASE}static/media/Diya.5471d69085cff46af86d.jpg` },
-      { name: "Mariam", role: "Production Lead", image: `${CDN_BASE}static/media/Mariam.2f715040b2fa9732e094.jpg` },
-      { name: "Smruthi", role: "Community Lead", image: `${CDN_BASE}static/media/Smruthi.b30a2ec81788435620d2.png` }
+      { name: "Mahi Pandit", role: "Core Lead", image: "/assets/Mahi_Pandit.jpg" },
+      { name: "Ansh Jain", role: "Core Lead", image: "/assets/Ansh_Jain.jpg" },
+      { name: "Arnav Lunia", role: "Core Lead", image: "/assets/Arnav_Lunia.jpg.PNG" }
     ],
     supportingMembers: []
   },
