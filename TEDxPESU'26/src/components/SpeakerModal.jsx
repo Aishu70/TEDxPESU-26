@@ -61,7 +61,7 @@ export default function SpeakerModal({ speaker, onClose }) {
             <div className="mt-6 space-y-2 text-xs text-tedx-muted">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-3.5 h-3.5 text-tedx-red" />
-                <span>Feb 14, 2026 • Live Session</span>
+                <span>{speaker.category === '2026' ? 'Nov 14, 2026' : 'Feb 14, 2026'} • Live Session</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-3.5 h-3.5 text-tedx-red" />
@@ -99,7 +99,7 @@ export default function SpeakerModal({ speaker, onClose }) {
               </div>
 
               {/* Talk Topic Banner */}
-              {speaker.topic && (
+              {speaker.topic && speaker.category !== '2026' && (
                 <div className="p-4 rounded-2xl bg-tedx-red/10 border border-tedx-red/25 relative overflow-hidden">
                   <div className="flex items-center space-x-1.5 text-xs font-bold text-tedx-red uppercase tracking-wider mb-1">
                     <Sparkles className="w-3.5 h-3.5" />

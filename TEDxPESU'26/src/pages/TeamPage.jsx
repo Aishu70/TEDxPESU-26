@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { Users, Sparkles, Heart, Shield, ArrowUpRight } from 'lucide-react';
 import { TEAM_DOMAINS } from '../data/tedxData';
 
+const getInitials = (name = '') => {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return '?';
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+};
+
 export default function TeamPage() {
   const [selectedDomain, setSelectedDomain] = useState('All');
 
@@ -89,14 +96,26 @@ export default function TeamPage() {
                     >
                       <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-black mb-3">
                         <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-tedx-red/40 blur-xl pointer-events-none" />
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300 relative z-10"
-                          onError={(e) => {
-                            e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=08080c&color=eb0028`;
-                          }}
-                        />
+                        <div
+                          data-initials-fallback
+                          className={`absolute inset-0 items-center justify-center bg-gradient-to-br from-[#26000a] via-[#111118] to-black text-3xl font-black tracking-wider text-tedx-red ${member.image ? 'hidden' : 'flex'}`}
+                          aria-label={`${member.name} initials`}
+                        >
+                          {getInitials(member.name)}
+                        </div>
+                        {member.image && (
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full object-cover contrast-125 group-hover:scale-105 transition-all duration-300 relative z-10"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                              const fallback = e.currentTarget.parentElement?.querySelector('[data-initials-fallback]');
+                              fallback?.classList.remove('hidden');
+                              fallback?.classList.add('flex');
+                            }}
+                          />
+                        )}
                       </div>
                       <h4 className="text-sm font-bold text-white group-hover:text-tedx-red transition-colors tracking-tight">
                         {member.name}
@@ -119,14 +138,19 @@ export default function TeamPage() {
                     {section.supportingMembers.map((sup, supIdx) => (
                       <div
                         key={supIdx}
-                        className="px-3.5 py-1.5 rounded-xl bg-[#111118] border border-white/5 text-xs text-white/90 hover:border-tedx-red/40 transition-colors"
+                        className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-[#111118] border border-white/5 text-xs text-white/90 hover:border-tedx-red/40 transition-colors"
                       >
-                        <span className="font-semibold text-white">{sup.name}</span>
-                        {sup.role && (
-                          <span className="text-[10px] text-tedx-muted ml-1.5 font-mono">
-                            • {sup.role}
-                          </span>
-                        )}
+                        <span className="flex w-7 h-7 shrink-0 items-center justify-center rounded-full bg-tedx-red/15 text-[10px] font-bold text-tedx-red border border-tedx-red/25" aria-hidden="true">
+                          {getInitials(sup.name)}
+                        </span>
+                        <span className="flex flex-col">
+                          <span className="font-semibold text-white">{sup.name}</span>
+                          {sup.role && (
+                            <span className="text-[10px] text-tedx-muted font-mono">
+                              {sup.role}
+                            </span>
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>

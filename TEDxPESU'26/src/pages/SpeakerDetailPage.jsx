@@ -14,7 +14,7 @@ export default function SpeakerDetailPage() {
     if (navigator.share) {
       navigator.share({
         title: `${speaker.name} | TEDxPESU`,
-        text: `Check out ${speaker.name}'s keynote at TEDxPESU: ${speaker.topic}`,
+        text: `Check out ${speaker.name}'s TEDxPESU speaker profile${speaker.topic ? `: ${speaker.topic}` : ''}`,
         url: window.location.href,
       }).catch(() => {});
     } else {
@@ -152,7 +152,7 @@ export default function SpeakerDetailPage() {
               <div className="space-y-1 text-center sm:text-left">
                 <h4 className="text-base font-bold text-white">Attend this talk in person</h4>
                 <p className="text-xs text-tedx-muted">
-                  Feb 14, 2026 • PES University Bengaluru MRD Auditorium
+                  {speaker.category === '2026' ? 'Nov 14, 2026' : 'Feb 14, 2026'} • PES University Bengaluru MRD Auditorium
                 </p>
               </div>
 

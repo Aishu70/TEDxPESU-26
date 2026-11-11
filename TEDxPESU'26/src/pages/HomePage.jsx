@@ -20,15 +20,6 @@ export default function HomePage() {
   // Top 4 featured 2026 speakers matching the template
   const featuredSpeakers = SPEAKERS.slice(0, 4);
 
-  // Core team members for home showcase with exact matching avatars from reference
-  const homeTeamMembers = [
-    { name: "Aarav Sharma", role: "Organizer", image: "/assets/team-aarav-avatar.jpg" },
-    { name: "Meera Iyer", role: "Co-Organizer", image: "/assets/team-meera-avatar.jpg" },
-    { name: "Devansh Gupta", role: "Curation Head", image: "/assets/team-devansh-avatar.jpg" },
-    { name: "Nikita Rao", role: "Design Head", image: "/assets/team-nikita-avatar.jpg" },
-    { name: "Rohan Kulkarni", role: "Web & Tech Head", image: "/assets/team-rohan-avatar.jpg" },
-  ];
-
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden pt-16">
       
@@ -457,52 +448,6 @@ export default function HomePage() {
 
               </div>
 
-            </div>
-          </div>
-
-          {/* THE TEAM ROW (Matches Bottom Right Team Panel in Reference Image) */}
-          <div className="space-y-6 pt-6">
-            <div className="flex items-end justify-between border-b border-white/10 pb-4">
-              <div>
-                <h3 className="text-3xl sm:text-4xl font-black font-condensed tracking-tight uppercase">
-                  THE TEAM
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-                  Meet the people who bring TEDxPESU to life.
-                </p>
-              </div>
-
-              <Link
-                to="/team"
-                className="text-xs sm:text-sm font-semibold text-white/80 hover:text-tedx-red flex items-center space-x-1 transition-colors"
-              >
-                <span>View Full Team</span>
-                <ChevronRight className="w-4 h-4 text-tedx-red" />
-              </Link>
-            </div>
-
-            {/* Team Members 5-Card Row (Matches bottom right in screenshot) */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-              {homeTeamMembers.map((member, idx) => (
-                <div
-                  key={idx}
-                  className="group rounded-2xl bg-[#08080c] border border-white/10 p-3 text-center transition-all duration-300 hover:border-tedx-red/60 hover:shadow-[0_0_25px_rgba(235,0,40,0.3)] hover:-translate-y-1"
-                >
-                  <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-black mb-3">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-all duration-300"
-                    />
-                  </div>
-                  <h4 className="text-sm font-bold text-white group-hover:text-tedx-red transition-colors tracking-tight">
-                    {member.name}
-                  </h4>
-                  <p className="text-[11px] text-[#9ca3af] mt-0.5">
-                    {member.role}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
 

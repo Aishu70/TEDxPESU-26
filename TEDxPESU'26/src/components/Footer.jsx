@@ -49,7 +49,7 @@ export default function Footer() {
               <span>•</span>
               <span className="flex items-center space-x-1">
                 <Calendar className="w-3.5 h-3.5 text-tedx-red" />
-                <span>Feb 14, 2026</span>
+                <span>Nov 14, 2026</span>
               </span>
             </div>
           </div>

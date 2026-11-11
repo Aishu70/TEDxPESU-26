@@ -36,11 +36,11 @@ export default function SpeakerCard({ speaker, onClick }) {
         {/* Radial red spotlight */}
         <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-tedx-red/40 blur-2xl group-hover:scale-125 transition-transform duration-500 pointer-events-none" />
 
-        {/* Speaker Image — grayscale by default, full color on hover */}
+        {/* 2026 speaker images stay in color; other editions turn color on hover */}
         <img
           src={speaker.image}
           alt={speaker.name}
-          className="relative z-10 h-full w-full object-cover object-top grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500"
+          className={`relative z-10 h-full w-full object-cover object-top ${speaker.category === '2026' ? '' : 'grayscale'} contrast-125 brightness-95 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500`}
           onError={(e) => {
             e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(speaker.name)}&background=0a0a10&color=eb0028&size=512`;
           }}

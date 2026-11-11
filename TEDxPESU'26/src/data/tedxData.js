@@ -3,7 +3,7 @@ export const EVENT_DETAILS = {
   theme: "CONTRAST IN CONVERGENCE",
   themeTagline: "Where opposing perspectives meet, collide, and create new possibilities.",
   themeDescription: "A day of ideas, stories, and perspectives where opposing worlds meet to create a larger, shared picture. Join us as visionaries from technology, the arts, human biology, and environmental stewardship converge to uncover truths hidden in contrasts.",
-  date: "Feb 14, 2026",
+  date: "Nov 14, 2026",
   day: "Saturday",
   time: "09:30 AM – 06:00 PM IST",
   venue: "PES University, Bengaluru",
@@ -22,85 +22,68 @@ export const EVENT_DETAILS = {
 
 export const CDN_BASE = "https://ted-x-pesu-2025.vercel.app/";
 export const REGISTRATION_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScfkDa7KpyLI-zWghyw3FJ_JkN4ZUuqL-f60zT65CP20GWhEw/viewform";
-
+// 1. Dr. Abi Srikanth Krishna
+// 2. Naman Munot
+// 3. Dr. Kumaresh Krishnamoorthy 
+// 4. Ar. Sriram Ramakrishnan 
+// 5. Amita Roy 
+// 6. Akash Raj
 export const SPEAKERS = [
   {
-    id: "ananya-rao",
-    name: "Ananya Rao",
-    role: "Social Entrepreneur",
-    company: "EcoSphere Ventures",
+    id: "Dr. Abi Srikanth Krishna",
+    name: "Dr. Abi Srikanth Krishna",
+    role: "Behavioural Intelligence Strategist",
+    company: "",
     category: "2026",
-    topic: "Regenerating the Commons: When Grassroots Meets Deep Tech",
-    image: "/assets/speaker-ananya-avatar.jpg",
-    bio: "Ananya Rao is a social entrepreneur whose work bridges indigenous ecological knowledge with scalable circular supply chains. As the founder of EcoSphere Ventures, she has empowered over 40 rural craft cooperatives across South India to access global ethical markets while maintaining zero-waste production cycles. Her mission is to prove that economic resilience and ecological regeneration are not conflicting ideals, but intertwined imperatives.",
-    highlights: ["Forbes 30 Under 30 Asia (Social Impact)", "UN Young Environmental Champion Fellow", "Keynote at Global Circular Economy Summit"],
-    talkSummary: "In this talk, Ananya breaks down why true sustainability cannot exist in isolation. She demonstrates how contrasting models—ancient community resource pooling and autonomous distributed logistics—can converge to repair fragile ecosystems without leaving human livelihoods behind.",
-    quote: "True innovation begins when we stop treating community traditions and modern technology as mortal rivals."
+    image: "/assets/dr-abi-srikanth-krishna.jpg",
+    bio: "Dr. Abi Srikanth Krishna is a keynote speaker and Behavioural Intelligence Strategist who helps individuals achieve their desired lifestyles, personally and professionally, through the science of human behaviour. Her work focuses on helping people think differently, communicate effectively, and enhance their overall performance. She holds a Master’s degree in Microbiology and an honorary doctorate, and is an accomplished author. Her talks have featured across media, speaking, and professional platforms. Outside her professional work, she is passionate about dance and Silambam, enjoys emceeing, and is interested in exploring Memory Sports."
   },
   {
-    id: "karan-mehta",
-    name: "Karan Mehta",
-    role: "AI Researcher",
-    company: "NeuralBound AI Labs",
+    id: "naman-munot",
+    name: "Naman Munot",
+    role: "Multidisciplinary Artist & Innovator",
+    company: "",
     category: "2026",
-    topic: "The Ghost in the Machine: Neuro-Symbolic Harmony and Human Agency",
-    image: "/assets/speaker-karan-avatar.jpg",
-    bio: "Karan Mehta is an AI scientist and cognitive engineer specializing in neuro-symbolic reasoning architectures and cooperative multi-agent intelligences. Having trained at IIT Madras and CMU, Karan leads breakthrough research into explainable generative systems that harmonize deterministic mathematical logic with statistical neural intuition.",
-    highlights: ["Author of 14 peer-reviewed NeurIPS & ICML papers", "Adviser to National AI Ethics Taskforce", "Pioneer of verifiable reasoning in autonomous agents"],
-    talkSummary: "Can an algorithm truly 'understand' what it creates? Karan guides us into the colliding worlds of black-box statistical learning and crystal-clear deductive reasoning, showing how the contrast between neural unpredictability and mathematical proof creates the next frontier of human-AI collaboration.",
-    quote: "Intelligence is not a solitary monolith; it is an electric dialogue between chaotic intuition and structured reason."
+    image: "/assets/naman-munot.jpg",
+    bio: "Naman Munot is a multidisciplinary professional, artist, and innovator working at the intersection of technology, creativity, and social impact. A national child artist and BITS Pilani alumnus with a background in Physics, he has spent over a decade exploring fields including advertising, theatre, political campaign management, education, entrepreneurship, and technology. He has worked across startups and technology companies, building businesses, leading growth and sales, and developing go-to-market strategies. His experience also includes teaching, social initiatives, and international work. Naman is returning to his artistic roots through theatre, dance, and immersive storytelling while exploring how emerging technologies such as AI, virtual reality, and mixed reality can transform human experiences."
   },
   {
-    id: "ira-sen",
-    name: "Ira Sen",
-    role: "Filmmaker",
-    company: "Studio Kalpana",
+    id: "dr-kumaresh-krishnamoorthy",
+    name: "Dr. Kumaresh Krishnamoorthy",
+    role: "Surgeon & Healthcare Innovator",
+    company: "",
     category: "2026",
-    topic: "Framing the Invisible: Cinema at the Collision of Myth and Modernity",
-    image: "/assets/speaker-ira-avatar.jpg",
-    bio: "Ira Sen is an internationally acclaimed documentary director and narrative filmmaker whose films explore how urbanization disrupts ancestral storytelling traditions. Her work has screened at the International Film Festival of Rotterdam, Sundance, and Mumbai Film Festival. Ira fuses tactile 16mm celluloid textures with algorithmic volumetric lighting to tell poignant tales of human dislocation and resilience.",
-    highlights: ["Golden Conch Winner at MIFF", "National Film Award Nominee", "Member of the International Documentary Association"],
-    talkSummary: "Ira explores the visual tension between age-old oral folklore and high-speed synthetic imagery. Through clips from her upcoming film, she reveals how embracing cultural dissonance on screen allows storytellers to capture emotional truths that polished fiction cannot touch.",
-    quote: "When a camera looks at conflicting worlds, it should not seek harmony—it should capture the friction where sparks fly."
+    image: "/assets/dr-kumaresh-krishnamoorthy.jpg",
+    bio: "Dr. Kumaresh Krishnamoorthy has spent over 25 years in surgery, with advanced training in India and the United States, where he saw how clinical insight could translate into cutting-edge medical technology. He has developed patented medical devices, navigated complex regulatory pathways, collaborated with engineers and innovators, served as a National Innovation Mentor with NITI Aayog's Atal Innovation Mission, and earned recognition among India's Top 25 Healthcare Innovators. His work brings together the operating theatre, the innovation ecosystem, and the realities of everyday healthcare."
   },
   {
-    id: "rishi-varma",
-    name: "Rishi Varma",
-    role: "Sustainability Advocate",
-    company: "TerraRevive Materials",
+    id: "ar-sriram-ramakrishnan",
+    name: "Ar. Sriram Ramakrishnan",
+    role: "Principal Architect",
+    company: "FHD India",
     category: "2026",
-    topic: "Bio-Constructs: Turning Agricultural Ash into Architectural Gold",
-    image: "/assets/speaker-rishi-avatar.jpg",
-    bio: "Rishi Varma is an environmental engineer and materials scientist pioneering carbon-negative composites derived from agricultural waste. His startup TerraRevive converts rice husk ash and stubble byproducts into lightweight structural concrete alternatives, actively combating northern India's seasonal air pollution crisis while radically decarbonizing urban construction.",
-    highlights: ["Earthshot Prize Finalist (Clean Our Air category)", "TED Global Fellow 2024", "Patented 3 Bio-Composite Material Formulations"],
-    talkSummary: "Rishi demonstrates how India's agricultural burning dilemma and booming urban infrastructure appetite can be transformed into complementary solutions. By confronting waste with advanced chemical engineering, he presents a tangible blueprint for living architecture.",
-    quote: "The earth does not produce waste; human imagination produces waste when it refuses to connect opposite dots."
+    image: "/assets/ar-sriram-ramakrishnan.jpg",
+    bio: "Ar. Sriram Ramakrishnan is Principal Architect and Head of FHD India's Bengaluru office, with over 14 years of professional experience across India, the United States, and the Middle East. An Associate of the American Institute of Architects (AIA) and the Indian Institute of Architects (IIA), he leads projects across diverse architectural typologies nationwide. He holds a Master of Architecture from The Ohio State University, where he was a University Fellow, and a Bachelor of Architecture from NIT Trichy, where he graduated with the University Gold Medal. His recognitions include '50 Under 40 – 2026', 'NIT Young Achiever of the Year 2025', 'The Economic Times Young Achiever of the Year 2024', and 'Nextgen Spotlight Sustainable Architect of the Year 2023'. Several projects under his leadership have received the 'Building of the Year' honour. He is also a frequent guest speaker at institutions including NIT Trichy, NIT Calicut, RV Bengaluru, BMSCA, and SPA Bhopal, and his work has appeared in international publications.",
+    highlights: ["50 Under 40 – 2026", "NIT Young Achiever of the Year 2025", "The Economic Times Young Achiever of the Year 2024", "Nextgen Spotlight Sustainable Architect of the Year 2023", "NIT Trichy University Gold Medal"]
   },
   {
-    id: "dr-deepti-navaratna",
-    name: "Dr. Deepti Navaratna",
-    role: "Neuroscientist & Musician",
-    company: "National Institute of Advanced Studies (NIAS)",
-    category: "2025",
-    topic: "The Neural Symphony: How the Brain Decodes Meaning, Rhythm, and Mind",
-    image: `${CDN_BASE}static/media/Deepti.4d29908563819e0a28ac.png`,
-    bio: "Dr. Deepti Navaratna is a neuroscientist and musician whose research bridges cognitive neuroscience, music cognition, and the humanities, exploring how the brain encodes sound, rhythm, and meaning. She earned her Ph.D. in Neuroscience from the University of New Mexico (2008) and served as an Assistant Neuroscientist at Harvard Medical School and Massachusetts General Hospital (2008–2013). Currently, as the T.V. Raman Pai Chair Professor at the National Institute of Advanced Studies, her work focuses on neurohumanities. Formerly Executive and Regional Director of IGNCA Bengaluru, she is recognized globally with honors including the Clore International Fellowship.",
-    highlights: ["Harvard Medical School & Mass General Fellow", "T.V. Raman Pai Chair Professor at NIAS", "Clore International Fellowship Recipient", "Former Executive Director, IGNCA Bengaluru"],
-    talkSummary: "Dr. Deepti explores the profound neurobiology of musical perception. She reveals how neurological architecture and ancient modal scales intertwine to cultivate empathy, regulate cognitive states, and preserve memory in neurological trauma.",
-    quote: "Music is not merely sound; it is the brain's earliest language for translating sensory chaos into emotional architecture."
+    id: "amita-roy",
+    name: "Amita Roy",
+    role: "Independent Researcher & Historian of Indian Royalty",
+    company: "The Indian Quest Digital",
+    category: "2026",
+    image: "/assets/amita-roy.jpg",
+    bio: "Amita Roy is an independent researcher, historian of Indian royalty, and Founder & CEO of The Indian Quest Digital, a platform dedicated to documenting India's royal heritage, history, and cultural legacy. Her research focuses on the erstwhile Indian Princely States, royal dynasties, Maharani-led histories, and the socio-cultural narratives of India's royal families. She has published research and historical articles exploring the Holkar, Gaekwar, Cooch Behar, and other royal lineages, alongside research interests in Pallava art and architecture and the history of kingship. Through her research, publications, and digital platform, she seeks to preserve lesser-known historical narratives and bring India's royal heritage to contemporary audiences."
   },
   {
-    id: "vivek-vijayakumaran",
-    name: "Vivek Vijayakumaran",
-    role: "Theatre Director & Actor Trainer",
-    company: "Our Theatre Collective",
-    category: "2025",
-    topic: "The Architecture of Silence: Radical Presence on the Contemporary Stage",
-    image: `${CDN_BASE}static/media/Vivek.69974d3e33e1f7138ff9.png`,
-    bio: "Vivek Vijayakumaran is a multifaceted theatre artist with over 15 years of experience in acting, directing, training, and creating innovative performances. He has trained under legends like Padma Bhushan Heisnam Kanhailal and Guru G. Venu, as well as Italy’s famed Workcenter of Jerzy Grotowski and Thomas Richards. He is the recipient of the INLAKS India Theatre Award (2012) and was featured among Forbes India’s '12 boundary-pushing theatre innovators' (2015). As director, Vivek has helmed productions like 'Imagine a Room', 'Just Hiss', and the non-verbal masterpiece 'IT IS YOU'. He leads Our Theatre Collective and Our Theatre Studio.",
-    highlights: ["Forbes India 12 Boundary-Pushing Theatre Innovators", "INLAKS India Theatre Award Winner", "Trained at Workcenter of Jerzy Grotowski, Italy", "Director of Internationally Acclaimed 'BHIMA' & 'IT IS YOU'"],
-    talkSummary: "In an era saturated with verbal chatter, what does silence communicate? Vivek illustrates the physical discipline and emotional vulnerability needed to hold an audience through stillness and breath alone.",
-    quote: "The moment an actor stops pretending to speak and dares to listen to the room's emptiness, theatre becomes sacred."
+    id: "akash-raj",
+    name: "Akash Raj",
+    role: "AI Product Manager & TEDx Speaker",
+    company: "Tiramai AI",
+    category: "2026",
+    image: "/assets/akash-raj.jpg",
+    bio: "Akash Raj is an AI Product Manager, TEDx speaker, and creator of Military Mantra, a defence-focused digital platform with over 270,000 YouTube subscribers. With around eight years of experience across technology, product management, and enterprise solutions, he currently works at Tiramai AI, building AI solutions for enterprise and defence applications. He has documented the stories of over 200 veterans, pursued his own journey towards the Armed Forces, and co-founded Super Dream Foundation to support underprivileged children. His work lies at the intersection of technology, defence, storytelling, and social impact.",
+    highlights: ["Creator of Military Mantra, with 270,000+ YouTube subscribers", "Documented stories of 200+ veterans", "Co-founder of Super Dream Foundation"]
   },
   {
     id: "virupakshappa-hovale",
@@ -329,7 +312,6 @@ export const TEAM_DOMAINS = [
       { name: "Sufiya Khanam", role: "Team Member" },
       { name: "Tushar Y Nayaka", role: "Team Member" },
       { name: "Akanksha", role: "Team Member" },
-      { name: "Mayur", role: "Team Member" },
       { name: "Rahul Sridhara Shetty", role: "Team Member" }
     ]
   },
