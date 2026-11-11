@@ -34,10 +34,10 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-black text-white selection:bg-tedx-red selection:text-white relative">
+      <div className="flex flex-col min-h-screen bg-black text-white selection:bg-tedx-red selection:text-white relative overflow-x-hidden">
         <InteractiveBackground />
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow animate-fadeIn">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/event-2026" element={<Event2026Page />} />

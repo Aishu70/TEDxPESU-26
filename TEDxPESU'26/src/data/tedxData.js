@@ -201,7 +201,7 @@ export const SPEAKERS = [
     category: "Past",
     topic: "Inclusion by Design: Assistive Tech and Dignity for Neurodivergent Minds",
     image: `${CDN_BASE}static/media/speaker-4.5baafccd448e37d512b1.png`,
-    bio: "Swathi Vellal Raghunandan is the Founder Director of Ishanya India Foundation, a premier NGO in Bangalore empowering persons with disabilities through assistive technology and personalized special education. With Master's degrees in Special Educational Needs from the University of Northampton and Clinical Psychology from Christ University, she is the recipient of the MTC Global Award and the 2024 Amarnath Rajanahally Inclusion Award.",
+    bio: "Swathi Vellal Raghunandan is the Founder Director of Ishanya India Foundation, a premier Bangalore empowering persons with disabilities through assistive technology and personalized special education. With Master's degrees in Special Educational Needs from the University of Northampton and Clinical Psychology from Christ University, she is the recipient of the MTC Global Award and the 2024 Amarnath Rajanahally Inclusion Award.",
     highlights: ["Founder, Ishanya India Foundation", "Amarnath Rajanahally Inclusion Award 2024", "Master's in SEN from University of Northampton, UK"],
     talkSummary: "Swathi challenges conventional notions of disability, demonstrating how assistive digital interfaces allow neurodivergent youth to unlock extraordinary vocational and artistic capabilities.",
     quote: "Disability is not an inherent defect of the person; it is a design flaw in a world built for only one type of body and brain."
@@ -266,7 +266,6 @@ export const PERFORMERS = [
     highlights: ["Corporate Showcase Headliners across Bengaluru", "Alumni Collective carrying Forward PES Heritage"]
   }
 ];
-
 export const TEAM_DOMAINS = [
   {
     domain: "Organizing & Core Leads",
@@ -286,14 +285,16 @@ export const TEAM_DOMAINS = [
     quote: "Connecting Ideas, Creating Experiences.",
     leadRole: "DESIGN CORES",
     mainMembers: [
-      { name: "Nikita Rao", role: "Design Head", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" },
-      { name: "Saanvi", role: "Design Core", image: `${CDN_BASE}static/media/Saanvi.c5ddd71ff8d752dd8b61.JPG` },
-      { name: "Nirmita", role: "Design Core", image: `${CDN_BASE}static/media/Nirmita.9697d321b04098afcafc.jpg` }
+      { name: "Vashini", role: "Head of Design" },
+      { name: "Jia", role: "Head of Design", image: "/assets/Jia design core.jpg" }
     ],
     supportingMembers: [
-      { name: "Jia Arun", role: "UI/UX & Stage Graphics" },
-      { name: "Pragnya Bedathur", role: "Visual Branding" },
-      { name: "Vashini", role: "Print & Merch Design" }
+      { name: "Pragnya", role: "Team Member" },
+      { name: "Shreyas", role: "Team Member" },
+      { name: "Ankita", role: "Team Member" },
+      { name: "Sapna", role: "Team Member" },
+      { name: "Saikripa", role: "Team Member" },
+      { name: "Shardhitha", role: "Team Member" }
     ]
   },
   {
@@ -301,23 +302,22 @@ export const TEAM_DOMAINS = [
     quote: "Crafting the Visual Symphony.",
     leadRole: "C&C CORES",
     mainMembers: [
-      { name: "Devansh Gupta", role: "Curation Head", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" },
-      { name: "Mahi", role: "C&C Core", image: `${CDN_BASE}static/media/Mahi.1b4f12f76d868e58d58f.jpg` },
-      { name: "Sohini", role: "C&C Core", image: `${CDN_BASE}static/media/Sohini.23f500fb7ac254e06cb4.jpg` },
-      { name: "Avani", role: "C&C Core", image: `${CDN_BASE}static/media/Avani.6b8e5d74893cd8eb803f.jpg` }
+      { name: "Malavika", role: "Head of CnC", image: "/assets/MALAVIKA_CnC.jpg" },
+      { name: "Maanasi", role: "Head of CnC", image: "/assets/Maanasi_Sharma_CnC_Core.jpg" },
+      { name: "Tanvi", role: "Head of CnC", image: "/assets/Tanvi_Shetty_CnC_Core.jpg" }
     ],
     supportingMembers: [
-      { name: "Anushka", role: "Speaker Mentorship" },
-      { name: "Arya Rajwade", role: "Talk Research" },
-      { name: "Maanasi", role: "Script & Editorial" },
-      { name: "Malavika", role: "Theme Synthesis" },
-      { name: "Parvathy", role: "Curation Associate" },
-      { name: "Raina", role: "Editorial Associate" },
-      { name: "Rohini", role: "Speaker Liaison" },
-      { name: "Samanyu", role: "Content Strategy" },
-      { name: "Sathvik Rao", role: "Speaker Host" },
-      { name: "Tanvi", role: "Storyboarding" },
-      { name: "Tarunika", role: "Curation Associate" }
+      { name: "Anshul", role: "Team Member" },
+      { name: "Rachit", role: "Team Member" },
+      { name: "Rohini", role: "Team Member" },
+      { name: "Anna", role: "Team Member" },
+      { name: "Ananya", role: "Team Member" },
+      { name: "Ragamita", role: "Team Member" },
+      { name: "Sufiyan", role: "Team Member" },
+      { name: "Raj", role: "Team Member" },
+      { name: "Disha", role: "Team Member" },
+      { name: "Rakshita", role: "Team Member" },
+      { name: "Parvathi", role: "Team Member" }
     ]
   },
   {
@@ -325,12 +325,14 @@ export const TEAM_DOMAINS = [
     quote: "Turning ideas into code.",
     leadRole: "TECH LEADS",
     mainMembers: [
-      { name: "Rohan Kulkarni", role: "Web & Tech Head", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" },
-      { name: "Siddanth", role: "Tech Lead", image: `${CDN_BASE}static/media/Siddanth.67444f1c4c18523a8d56.jpg` }
+      { name: "Sucheta R. Shinganmakki", role: "Head of WebDev", image: "/assets/Sucheta_R_Shinganmakki_Webdev_Core.jpg" }
     ],
     supportingMembers: [
-      { name: "Harsimran Kaur", role: "Frontend Engineer" },
-      { name: "Sucheta", role: "Fullstack Developer" }
+      { name: "Sufiya Khanam", role: "Team Member" },
+      { name: "Tushar Y Nayaka", role: "Team Member" },
+      { name: "Akanksha", role: "Team Member" },
+      { name: "Mayur", role: "Team Member" },
+      { name: "Rahul Sridhara Shetty", role: "Team Member" }
     ]
   },
   {
@@ -338,19 +340,21 @@ export const TEAM_DOMAINS = [
     quote: "Orchestrating moments, shaping lasting memories.",
     leadRole: "EVM CORES",
     mainMembers: [
-      { name: "Rejith", role: "EVM Core", image: `${CDN_BASE}static/media/Rejith.551af297f59cd19605a5.jpg` },
-      { name: "Ansh", role: "EVM Core", image: `${CDN_BASE}static/media/Ansh.faef7ec49d562d4397a4.jpg` }
+      { name: "Sravan Kumar D", role: "Head of EVM", image: "/assets/Sravan_evm_core.jpg" },
+      { name: "Avantika", role: "Head of EVM", image: "/assets/Avantika.jpeg" }
     ],
     supportingMembers: [
-      { name: "Avantika Kishore", role: "Stage Coordinator" },
-      { name: "Piyush Shiv", role: "Auditorium Logistics" },
-      { name: "Sharvani", role: "Guest Relations" },
-      { name: "Shivangi", role: "Green Room Hospitality" },
-      { name: "Shriya M", role: "Crowd Flow" },
-      { name: "Syeda Fathima", role: "Ticketing & Badging" },
-      { name: "Terrance Chris", role: "Security & Safety" },
-      { name: "Varsha", role: "VIP Reception" },
-      { name: "Yatin Prabhakar", role: "Equipment Logistics" }
+      { name: "Vivek Doshi", role: "Team Member" },
+      { name: "Jaswanth Reddy. D", role: "Team Member" },
+      { name: "Kunkum J L", role: "Team Member" },
+      { name: "Krishna Keerthan Reddy D.R", role: "Team Member" },
+      { name: "Mukkesh Venkatesan", role: "Team Member" },
+      { name: "Sinchana S K", role: "Team Member" },
+      { name: "Keerthana Kumaresh", role: "Team Member" },
+      { name: "Niranjan R M", role: "Team Member" },
+      { name: "Aditya Bharadwaj", role: "Team Member" },
+      { name: "Pragati Kumari Thakur", role: "Team Member" },
+      { name: "Teertha Sujesh", role: "Team Member" }
     ]
   },
   {
@@ -358,13 +362,14 @@ export const TEAM_DOMAINS = [
     quote: "Framing stories, bringing visions to life.",
     leadRole: "VE LEAD",
     mainMembers: [
-      { name: "Madhav", role: "VE Lead", image: `${CDN_BASE}static/media/Madhav.e404dfa04b4f795ab38b.jpg` }
+      { name: "Aryaa Nischal", role: "Head of VE", image: "/assets/Nischal_Arun_Video_Editing_Core.jpg" }
     ],
     supportingMembers: [
-      { name: "Vineeth", role: "Cinematographer" },
-      { name: "Aryan", role: "Video Editor" },
-      { name: "Kushal", role: "Live Broadcast Engineer" },
-      { name: "Nandan", role: "Sound & Acoustic Design" }
+      { name: "Jagdeesh", role: "Team Member" },
+      { name: "Raghoothama", role: "Team Member" },
+      { name: "Rithu", role: "Team Member" },
+      { name: "Trinayan", role: "Team Member" },
+      { name: "Kushal", role: "Team Member" }
     ]
   },
   {
@@ -372,15 +377,13 @@ export const TEAM_DOMAINS = [
     quote: "Building partnerships, fueling possibilities.",
     leadRole: "SPONSORSHIP LEAD",
     mainMembers: [
-      { name: "Pratyusha", role: "Sponsorship Lead", image: `${CDN_BASE}static/media/pratyusha.9cbf75e3daa56c39d01d.jpg` }
+      { name: "Arjun Subbaraman", role: "Head of Sponsorship", image: "/assets/Arjun_Subbaraman_sponsorship_member.jpg" }
     ],
     supportingMembers: [
-      { name: "Arjun", role: "Corporate Outreach" },
-      { name: "Devansh Tiwari", role: "Brand Relations" },
-      { name: "Harsha Vardhana", role: "Sponsor Deliverables" },
-      { name: "Manya Manjunatha", role: "Finance Coordinator" },
-      { name: "Sidharth Rao", role: "Partnership Associate" },
-      { name: "Sriram", role: "In-kind Partnerships" }
+      { name: "Bhaumik", role: "Team Member" },
+      { name: "Ved Mudkavi", role: "Team Member" },
+      { name: "Riddhi", role: "Team Member" },
+      { name: "Fatima", role: "Team Member" }
     ]
   },
   {
@@ -388,24 +391,27 @@ export const TEAM_DOMAINS = [
     quote: "Inspiring minds, amplifying voices.",
     leadRole: "MARKETING CORES",
     mainMembers: [
-      { name: "Rithvik", role: "Marketing Core", image: `${CDN_BASE}static/media/Rithvik.3f52ce651630067e2b37.jpg` },
-      { name: "Arnav", role: "Marketing Core", image: `${CDN_BASE}static/media/Arnav.eef25af59f5fd69fa105.PNG` }
+      { name: "Vaishnavi PM", role: "Head of Marketing", image: "/assets/Vaishnavi PM - marketing - core.jpg" },
+      { name: "Jayneel Patel", role: "Head of Marketing", image: "/assets/jayneel patel_Marketing_Core.JPG" }
     ],
     supportingMembers: [
-      { name: "Anuva Kishore", role: "Social Media Strategist" },
-      { name: "Kathi Sibi", role: "Content Creator" },
-      { name: "Meghana Sridhar", role: "Campus Ambassador Lead" },
-      { name: "Prajwal N", role: "Digital Campaigns" },
-      { name: "Sai Sushantha", role: "PR & Media Liaison" },
-      { name: "Samhita Rao", role: "Community Engagement" },
-      { name: "Saupriya S Y", role: "Influencer Relations" },
-      { name: "Sushma Raj", role: "Creative Copywriter" },
-      { name: "Vaishnavi PM", role: "Newsletter & Blog Editor" },
-      { name: "Vivek Mysore", role: "Campus Activations" }
+      { name: "Siddhi Sehgal", role: "Team Member" },
+      { name: "Riya", role: "Team Member" },
+      { name: "Pooja", role: "Team Member" },
+      { name: "Kishore", role: "Team Member" },
+      { name: "Nivedita", role: "Team Member" },
+      { name: "Sanskriti", role: "Team Member" },
+      { name: "Aashrith Dutta", role: "Team Member" },
+      { name: "Dhruthi", role: "Team Member" },
+      { name: "Prathiba", role: "Team Member" },
+      { name: "Aadithya", role: "Team Member" },
+      { name: "Harshika", role: "Team Member" },
+      { name: "Anuva", role: "Team Member" },
+      { name: "Vivek", role: "Team Member" },
+      { name: "Riya Sankadal", role: "Team Member" }
     ]
   }
 ];
-
 export const PAST_EDITIONS = [
   {
     year: "2025",
