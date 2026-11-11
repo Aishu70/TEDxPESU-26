@@ -400,9 +400,6 @@ export const PAST_EDITIONS = [
     description: "A look back at last year's ideas, speakers, and the incredible TEDxPESU community. Centered around how individual human moments, memories, and scientific breakthroughs piece together into the vast mosaic of civilization.",
     attendees: "1,200+",
     talksCount: "8 Talks",
-    videoHighlightUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    videoTitle: "TEDxPESU 2025 Official Aftermovie",
-    videoDuration: "04:25",
     gallery: [
       { id: 1, src: `${CDN_BASE}static/media/tedx1.b350f35d9c5aca2e2754.JPG`, caption: "The Stage in Crimson Illumination" },
       { id: 2, src: `${CDN_BASE}static/media/tedx2.3fe6e05c142d6bd1d14c.JPG`, caption: "Standing Ovation at Main Auditorium" },

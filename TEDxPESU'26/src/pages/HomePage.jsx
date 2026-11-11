@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Users, ArrowUpRight, Play, Sparkles, ChevronRight, CheckCircle2, Ticket } from 'lucide-react';
-import { EVENT_DETAILS, SPEAKERS, PAST_EDITIONS, REGISTRATION_FORM_URL } from '../data/tedxData';
+import { SPEAKERS, REGISTRATION_FORM_URL } from '../data/tedxData';
 import SpeakerCard from '../components/SpeakerCard';
 import SpeakerModal from '../components/SpeakerModal';
 import CountdownTimer from '../components/CountdownTimer';
 
 export default function HomePage() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -361,34 +360,36 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Video Player & Photo Grid (Exact layout from Reference Image) */}
+            {/* YouTube link and 2025 event photo grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               
-              {/* Main Featured Video / Showcase (Col 7) */}
-              <div className="lg:col-span-7 relative group rounded-3xl overflow-hidden border border-white/10 bg-[#08080c] aspect-[16/10] shadow-2xl flex items-center justify-center">
+              {/* Featured YouTube link (Col 7) */}
+              <a
+                href="https://www.youtube.com/results?search_query=TEDxPESU"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Explore TEDxPESU videos on YouTube"
+                className="lg:col-span-7 relative group rounded-3xl overflow-hidden border border-white/10 bg-[#08080c] aspect-[16/10] shadow-2xl flex items-center justify-center"
+              >
                 <img
-                  src="/assets/stage-video-ref.jpg"
+                  src="/assets/2025/gallery/performer_IMG_3641.webp"
                   alt="TEDxPESU 2025 Stage"
                   className="w-full h-full object-cover contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-                {/* Play Button & Title */}
+                {/* YouTube link and title */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10">
-                  <button
-                    onClick={() => setIsVideoPlaying(true)}
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-tedx-red text-white flex items-center justify-center shadow-glow-md hover:scale-110 transition-transform mb-4 group/btn"
-                    aria-label="Play Aftermovie"
-                  >
+                  <span className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-tedx-red text-white flex items-center justify-center shadow-glow-md group-hover:scale-110 transition-transform mb-4">
                     <Play className="w-8 h-8 fill-white translate-x-0.5" />
-                  </button>
+                  </span>
 
                   <div className="flex items-center space-x-2">
                     <span className="text-white font-black text-2xl tracking-tight">TEDx</span>
                     <span className="text-white font-bold text-2xl tracking-wider">PESU</span>
                   </div>
                   <span className="text-[11px] text-zinc-400 uppercase tracking-widest mt-1">
-                    Official Aftermovie • 04:25
+                    Explore TEDxPESU on YouTube
                   </span>
                 </div>
 
@@ -397,7 +398,7 @@ export default function HomePage() {
                     2025: Tessellations of Time
                   </span>
                 </div>
-              </div>
+              </a>
 
               {/* Grid of Past Photos + More link (Col 5) */}
               <div className="lg:col-span-5 grid grid-cols-2 gap-4">
@@ -405,8 +406,8 @@ export default function HomePage() {
                 {/* Photo 1: Audience */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 group bg-black">
                   <img
-                    src="/assets/past-photo-1.jpg"
-                    alt="Audience"
+                    src="/assets/2025/gallery/speaker_DSC_7077.webp"
+                    alt="TEDxPESU 2025 audience Q&A"
                     className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
@@ -415,8 +416,8 @@ export default function HomePage() {
                 {/* Photo 2: Speaker with red X */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 group bg-black">
                   <img
-                    src="/assets/past-photo-2.jpg"
-                    alt="Speaker"
+                    src="/assets/2025/gallery/speaker_DSC_6932.webp"
+                    alt="TEDxPESU 2025 speaker on stage"
                     className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
@@ -425,8 +426,8 @@ export default function HomePage() {
                 {/* Photo 3: Networking / Team */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 group bg-black">
                   <img
-                    src="/assets/past-photo-3.jpg"
-                    alt="Networking"
+                    src="/assets/2025/gallery/performer_sanskriti.webp"
+                    alt="TEDxPESU 2025 performers"
                     className="w-full h-full object-cover contrast-110 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
@@ -498,37 +499,6 @@ export default function HomePage() {
           speaker={selectedSpeaker}
           onClose={() => setSelectedSpeaker(null)}
         />
-      )}
-
-      {/* Video Modal */}
-      {isVideoPlaying && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md">
-          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden border border-white/20 aspect-video">
-            <button
-              onClick={() => setIsVideoPlaying(false)}
-              className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/70 text-white hover:bg-tedx-red text-xs font-bold transition-colors"
-            >
-              Close ✕
-            </button>
-            <div className="w-full h-full flex flex-col items-center justify-center text-center p-8 bg-[#08080d]">
-              <div className="w-20 h-20 rounded-full bg-tedx-red/20 border border-tedx-red flex items-center justify-center mb-4">
-                <Play className="w-10 h-10 text-tedx-red fill-tedx-red translate-x-0.5" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">TEDxPESU 2025 Official Aftermovie</h3>
-              <p className="text-sm text-zinc-300 max-w-md mt-2">
-                Relive the electric energy, captivating talks on "Tessellations of Time", and stunning stage choreography at PES University.
-              </p>
-              <a
-                href="https://www.youtube.com/results?search_query=TEDxPESU"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 px-6 py-2.5 rounded-full bg-tedx-red text-white font-bold text-xs shadow-glow-sm hover:scale-105 transition-transform"
-              >
-                Watch Full Playlist on YouTube ↗
-              </a>
-            </div>
-          </div>
-        </div>
       )}
 
     </div>
