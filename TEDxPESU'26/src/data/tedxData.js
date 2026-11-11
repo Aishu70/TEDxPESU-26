@@ -274,7 +274,7 @@ export const TEAM_DOMAINS = [
     mainMembers: [
       { name: "Mahi Pandit", role: "Core Lead", image: "/assets/Mahi_Pandit.jpg" },
       { name: "Ansh Jain", role: "Core Lead", image: "/assets/Ansh_Jain.jpg" },
-      { name: "Arnav Lunia", role: "Core Lead", image: "/assets/Arnav_Lunia.jpg" }
+      { name: "Arnav Lunia", role: "Core Lead", image: "/assets/Arnav_Lunia.jpg.PNG" }
     ],
     supportingMembers: []
   },
