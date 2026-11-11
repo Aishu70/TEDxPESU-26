@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
-import { CDN_BASE } from '../data/tedxData';
+import { CDN_BASE, REGISTRATION_FORM_URL } from '../data/tedxData';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,23 +80,27 @@ export default function Navbar() {
 
           {/* Right Action CTA */}
           <div className="hidden sm:flex items-center space-x-3">
-            <Link
-              to="/register"
+            <a
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center space-x-1.5 px-5 py-2 rounded-full text-xs font-bold tracking-wide uppercase bg-transparent text-white border border-white/25 hover:border-tedx-red hover:bg-tedx-red hover:text-white transition-all duration-300 shadow-sm hover:shadow-glow-sm group"
             >
               <span>Register Now</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center space-x-2">
-            <Link
-              to="/register"
+            <a
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-tedx-red text-white"
             >
               Register ↗
-            </Link>
+            </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg bg-[#14141c] text-white border border-white/10 hover:text-tedx-red focus:outline-none"
@@ -129,13 +133,15 @@ export default function Navbar() {
             );
           })}
           <div className="pt-3 border-t border-white/10">
-            <Link
-              to="/register"
+            <a
+              href={REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full flex items-center justify-center space-x-2 py-3 rounded-xl bg-tedx-red text-white font-bold text-sm shadow-glow-sm"
             >
               <span>Register for 2026 Event</span>
               <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
       )}

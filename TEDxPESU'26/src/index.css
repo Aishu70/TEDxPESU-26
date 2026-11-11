@@ -67,22 +67,17 @@
   background: #eb0028;
 }
 
-/* Hardware acceleration & image crispness enhancements */
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@keyframes slideshowFade {
+  from {
+    opacity: 0.5;
+    transform: scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-img {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  image-rendering: -webkit-optimize-contrast;
-}
-
-.card-red-gradient, .glass-panel, .glass-panel-glow {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translateZ(0);
+.animate-slideshow-fade {
+  animation: slideshowFade 800ms ease-in-out;
 }
