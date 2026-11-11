@@ -66,3 +66,18 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #eb0028;
 }
+
+@keyframes slideshowFade {
+  from {
+    opacity: 0.5;
+    transform: scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slideshow-fade {
+  animation: slideshowFade 800ms ease-in-out;
+}

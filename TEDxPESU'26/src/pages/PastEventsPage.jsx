@@ -1,37 +1,62 @@
-import React, { useState } from 'react';
-import { Play, Sparkles, X, ChevronRight, Calendar, Users, Eye, ArrowUpRight, Award, History } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Play, Sparkles, X, ChevronLeft, ChevronRight, Calendar, Users, Eye, ArrowUpRight, Award, History } from 'lucide-react';
 import { PAST_EDITIONS, CDN_BASE } from '../data/tedxData';
 
 export default function PastEventsPage() {
-  const [selectedEdition, setSelectedEdition] = useState('2025');
   const [activeLightboxImage, setActiveLightboxImage] = useState(null);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  // All 32 photos from 2025 site
-  const allPastPhotos = Array.from({ length: 32 }, (_, i) => {
-    const num = i + 1;
-    let ext = 'JPG';
-    if ([4, 5, 6, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].includes(num)) ext = 'png';
-    else if ([7, 8, 22, 23, 24].includes(num)) ext = 'jpg';
-    
-    return {
-      id: num,
-      title: `Moment #${num} – TEDxPESU`,
-      url: `${CDN_BASE}static/media/tedx${num}.b350f35d9c5aca2e2754.${ext}`, // CDN fallback
-      fallback: `https://images.unsplash.com/photo-${[
-        '1492684223066-81342ee5ff30',
-        '1511578314322-379afb476865',
-        '1475721027785-f74eccf877e2',
-        '1528605248644-14dd04022da1',
-        '1505373877841-8d25f7d46678',
-        '1515187029135-18ee286d815b',
-        '1523580494863-6f3031224c94',
-        '1540575467063-178a50c2df87'
-      ][i % 8]}?auto=format&fit=crop&w=800&q=80`
-    };
-  });
+  const allPastPhotos = [
+    { id: 1, url: '/assets/2025/gallery/performer_IMG_3641.webp' },
+    { id: 2, url: '/assets/2025/gallery/performer_IMG_3654.webp' },
+    //{ id: 3, url: '/assets/2025/gallery/performer_IMG_3662.webp' },
+    { id: 4, url: '/assets/2025/gallery/performer_IMG_3664.webp' },
+    { id: 5, url: '/assets/2025/gallery/performer_sanskriti.webp' },
 
-  const currentEdition = PAST_EDITIONS.find(e => e.year === selectedEdition) || PAST_EDITIONS[0];
+    { id: 6, url: '/assets/2025/gallery/speaker_deep%201.webp' },
+    { id: 7, url: '/assets/2025/gallery/speaker_deep%202.webp' },
+    //{ id: 8, url: '/assets/2025/gallery/speaker_DSC_6873.webp' },
+    //{ id: 9, url: '/assets/2025/gallery/speaker_DSC_6875.webp' },
+    { id: 10, url: '/assets/2025/gallery/speaker_DSC_6909.webp' },
+    //{ id: 11, url: '/assets/2025/gallery/speaker_DSC_6931.webp' },
+    { id: 12, url: '/assets/2025/gallery/speaker_DSC_6932.webp' },
+    //{ id: 13, url: '/assets/2025/gallery/speaker_DSC_6934.webp' },
+    { id: 14, url: '/assets/2025/gallery/speaker_DSC_6961.webp' },
+    { id: 15, url: '/assets/2025/gallery/speaker_DSC_7077.webp' },
+    { id: 16, url: '/assets/2025/gallery/speaker_DSC_9527.webp' },
+
+    { id: 17, url: '/assets/2025/gallery/speaker_nidhi%201.webp' },
+    //{ id: 18, url: '/assets/2025/gallery/speaker_nidhi%202.webp' },
+    //{ id: 19, url: '/assets/2025/gallery/speaker_nidhi%203.webp' },
+    { id: 20, url: '/assets/2025/gallery/speaker_nidhi%204.webp' },
+    { id: 21, url: '/assets/2025/gallery/speaker_nidhi%205.webp' },
+
+    { id: 22, url: '/assets/2025/gallery/speaker_poo%201.webp' },
+    { id: 23, url: '/assets/2025/gallery/speaker_poo%202.webp' },
+    { id: 24, url: '/assets/2025/gallery/speaker_poo%203.webp' },
+    { id: 25, url: '/assets/2025/gallery/speaker_poo%204.webp' },
+    { id: 26, url: '/assets/2025/gallery/speaker_poo%205.webp' },
+
+    { id: 27, url: '/assets/2025/gallery/speaker_vivek%201.webp' },
+    { id: 28, url: '/assets/2025/gallery/speaker_vivek%202.webp' },
+    //{ id: 29, url: '/assets/2025/gallery/speaker_vivek%203.webp' },
+    { id: 30, url: '/assets/2025/gallery/speaker_vivek%204.webp' },
+    { id: 31, url: '/assets/2025/gallery/speaker_vivek%205.webp' },
+    { id: 32, url: '/assets/2025/gallery/speaker_vivek%206.webp' },
+
+    { id: 33, url: '/assets/2025/gallery/speaker_vk%201.webp' },
+    { id: 34, url: '/assets/2025/gallery/speaker_vk%202.webp' },
+    { id: 35, url: '/assets/2025/gallery/speaker_vk%203.webp' },
+];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % allPastPhotos.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [allPastPhotos.length]);
 
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-20 overflow-hidden relative">
@@ -71,87 +96,80 @@ export default function PastEventsPage() {
           </p>
         </div>
 
-        {/* Edition Selector Tabs */}
-        <div className="flex items-center space-x-2 border-b border-white/10 pb-4">
-          {PAST_EDITIONS.map((edition) => (
-            <button
-              key={edition.year}
-              onClick={() => setSelectedEdition(edition.year)}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${
-                selectedEdition === edition.year
-                  ? 'bg-tedx-red text-white shadow-glow-sm'
-                  : 'bg-[#12121a] text-tedx-muted hover:text-white'
-              }`}
-            >
-              TEDxPESU {edition.year} • {edition.theme}
-            </button>
-          ))}
-        </div>
-
         {/* Hero Video & Highlight Grid (Exact Match to Screenshot) */}
+
+        {/* Photo Slideshow & Event Details */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Main Video Banner Card */}
-          <div className="lg:col-span-7 relative group rounded-3xl overflow-hidden border border-[#252535] bg-[#0c0c14] aspect-[16/10] shadow-glass flex items-center justify-center">
+
+          {/* Photo Slideshow */}
+          <div className="lg:col-span-7 relative group rounded-3xl overflow-hidden border border-[#252535] bg-[#0c0c14] aspect-[16/10] shadow-glass">
+
             <img
-              src="/assets/stage-video-ref.jpg"
-              alt="TEDxPESU 2025 Stage"
-              className="w-full h-full object-cover contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-500"
+              key={allPastPhotos[activeSlide].id}
+              src={allPastPhotos[activeSlide].url}
+              alt="TEDxPESU 2025 event"
+              className="w-full h-full object-cover animate-slideshow-fade"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-            {/* Play Button & Details */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10">
-              <button
-                onClick={() => setIsVideoModalOpen(true)}
-                className="w-20 h-20 rounded-full bg-tedx-red text-white flex items-center justify-center shadow-glow-md hover:scale-110 transition-transform mb-4 group/btn"
-                aria-label="Play Aftermovie"
-              >
-                <Play className="w-8 h-8 fill-white translate-x-0.5" />
-              </button>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 pointer-events-none" />
 
-              <div className="flex items-center space-x-2">
-                <span className="text-white font-black text-2xl tracking-tight">TEDx</span>
-                <span className="text-white font-bold text-2xl tracking-wider">PESU</span>
-              </div>
-              <span className="text-xs text-tedx-muted uppercase tracking-widest mt-1">
-                Official Aftermovie • {currentEdition.videoDuration || '04:25'}
-              </span>
-            </div>
+            {/* Previous */}
+            <button
+              onClick={() =>
+                setActiveSlide((prev) =>
+                  (prev - 1 + allPastPhotos.length) % allPastPhotos.length
+                )
+              }
+              aria-label="Previous photograph"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-tedx-red transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
 
-            <div className="absolute bottom-4 left-4 z-20">
-              <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-md text-white border border-white/10">
-                {currentEdition.year}: {currentEdition.theme}
-              </span>
-            </div>
+            {/* Next */}
+            <button
+              onClick={() =>
+                setActiveSlide((prev) => (prev + 1) % allPastPhotos.length)
+              }
+              aria-label="Next photograph"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-tedx-red transition-colors"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
           </div>
 
-          {/* Stats & Edition Summary */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#0e0e15] border border-white/10 space-y-4">
+          {/* Event Details */}
+          <div className="lg:col-span-5">
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#0e0e15] border border-white/10 space-y-6">
+
               <h3 className="text-2xl font-black font-condensed uppercase tracking-tight text-white">
-                Theme: {currentEdition.theme}
+                THE EVENT
               </h3>
-              <p className="text-xs sm:text-sm text-tedx-muted leading-relaxed">
-                {currentEdition.description}
-              </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+
                 <div>
                   <span className="text-2xl font-black font-condensed text-tedx-red block">
-                    {currentEdition.attendees}
+                    1,200+
                   </span>
-                  <span className="text-[11px] text-tedx-muted uppercase font-medium">Delegates Welcomed</span>
+                  <span className="text-[11px] text-tedx-muted uppercase font-medium">
+                    Delegates Welcomed
+                  </span>
                 </div>
+
                 <div>
                   <span className="text-2xl font-black font-condensed text-tedx-red block">
-                    {currentEdition.talksCount}
+                    8
                   </span>
-                  <span className="text-[11px] text-tedx-muted uppercase font-medium">Curated Sessions</span>
+                  <span className="text-[11px] text-tedx-muted uppercase font-medium">
+                    Curated Sessions
+                  </span>
                 </div>
+
               </div>
 
-              <div className="pt-2">
+              <div className="pt-4 border-t border-white/5">
                 <a
                   href="https://www.youtube.com/results?search_query=TEDxPESU"
                   target="_blank"
@@ -162,10 +180,78 @@ export default function PastEventsPage() {
                   <ArrowUpRight className="w-3.5 h-3.5 text-tedx-red" />
                 </a>
               </div>
+
             </div>
           </div>
 
         </div>
+
+  
+
+{/* ========================================================
+    SPEAKERS INTRODUCTION
+======================================================== */}
+        <div className="space-y-6 pt-6">
+          <div className="border-b border-[#20202d] pb-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-tedx-red">
+              Meet the voices
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black font-condensed tracking-tight uppercase">
+              OUR SPEAKERS
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              'Screenshot%202026-11-10%20205948.png',
+              'Screenshot%202026-11-10%20205957.png',
+              'Screenshot%202026-11-10%20210007.png',
+              'Screenshot%202026-11-10%20210018.png',
+              'Screenshot%202026-11-10%20210028.png',
+              'Screenshot%202026-11-10%20210043.png',
+            ].map((image, index) => (
+              <div key={index} className="flex justify-center">
+                <img
+                  src={`/assets/2025/intro/${image}`}
+                  alt="TEDxPESU 2025 speaker"
+                  className="w-full h-64 object-contain transition-transform duration-500 hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+{/* ========================================================
+    PERFORMERS INTRODUCTION
+======================================================== */}
+        <div className="space-y-6 pt-6">
+          <div className="border-b border-[#20202d] pb-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-tedx-red">
+              The performances
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black font-condensed tracking-tight uppercase">
+              OUR PERFORMERS
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {[
+              'Screenshot%202026-11-10%20205807.png',
+              'Screenshot%202026-11-10%20205918.png',
+            ].map((image, index) => (
+              <div key={index} className="flex justify-center">
+                <img
+                  src={`/assets/2025/intro/${image}`}
+                  alt="TEDxPESU 2025 performer"
+                  className="w-full h-64 object-contain transition-transform duration-500 hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
 
         {/* ========================================================
             INTERACTIVE GALLERY (All 32+ Photos from Archive)
@@ -185,20 +271,19 @@ export default function PastEventsPage() {
             </span>
           </div>
 
+          
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {allPastPhotos.slice(0, 16).map((photo) => (
+            {allPastPhotos.map((photo) => (
               <div
                 key={photo.id}
                 onClick={() => setActiveLightboxImage(photo)}
                 className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#101018] border border-white/10 cursor-pointer hover:border-tedx-red/60 transition-all hover:shadow-glow-sm"
               >
                 <img
-                  src={photo.fallback}
-                  alt={photo.title}
+                  src={photo.url}
+                  alt="TEDxPESU 2025 event photograph"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.src = photo.fallback;
-                  }}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
                   <span className="text-[11px] text-white font-medium flex items-center space-x-1">
@@ -210,9 +295,10 @@ export default function PastEventsPage() {
             ))}
           </div>
 
+
           <div className="text-center pt-4">
             <span className="text-xs text-tedx-muted">
-              Showing 16 of 32 official high-resolution photographs from the TEDxPESU 2025 archive.
+              Showing 27 photographs from the TEDxPESU 2025 archive.
             </span>
           </div>
         </div>
@@ -230,8 +316,8 @@ export default function PastEventsPage() {
           </button>
           <div className="max-w-4xl max-h-[85vh] rounded-2xl overflow-hidden border border-white/20">
             <img
-              src={activeLightboxImage.fallback}
-              alt={activeLightboxImage.title}
+              src={activeLightboxImage.url}
+              alt="TEDxPESU 2025 event photograph"
               className="w-full h-full object-contain"
             />
           </div>
